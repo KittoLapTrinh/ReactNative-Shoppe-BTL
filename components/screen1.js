@@ -1,16 +1,20 @@
 import React, { useContext } from 'react';
+import {useNavigation} from "@react-navigation/native"
 import { StyleSheet,
      Text, 
      View, 
      Image, 
      Button,
      Input, 
-     TextInput,} from 'react-native';
+     TextInput,
+     TouchableOpacity} from 'react-native';
+import { MyContext } from "../App"
 
 export default function screen1() {
-    // let {img, setImg} = useContext(Mycontext)
+  
     
-    // let navigation = useNavigation();
+    let navigation = useNavigation();
+
     return (
         <View style={styles.container} >
             <View style={styles.top}>
@@ -49,9 +53,14 @@ export default function screen1() {
                 </View>
                 <View style={styles.center5}>
                    
-                    <input value='4 MÀU-CHỌN MÀU          >' type='button' style={{width:'350px', height:'35px', borderRadius: '10px', fontSize: '20px', fontWeight: 'bold'}}></input>
                     
-                   
+                    <TouchableOpacity style={{ flex: 0.5,  borderRadius: 10, alignItems: 'center', justifyContent: 'center',  marginHorizontal: 10 }}
+                        
+                        onPress={()=> navigation.navigate('screen2')}
+                        >
+                        <input value='4 MÀU-CHỌN MÀU          >' type='button' style={{width:'350px', height:'35px', borderRadius: '10px', fontSize: '20px', fontWeight: 'bold'}}></input>
+                    
+                    </TouchableOpacity>
                 </View>
             </View>
            
@@ -166,3 +175,4 @@ const styles = StyleSheet.create({
     }
    
 });
+

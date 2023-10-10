@@ -1,19 +1,18 @@
 import React, {useContext } from 'react';
 import {useNavigation} from "@react-navigation/native"
 import { StyleSheet, Text,  View, TouchableOpacity, Image,Button, TextInput } from 'react-native';
-
-
+import { MyContext } from "../App";
 
 
 export default function Screen2() {
-//   let navigation = useNavigation();
+  let navigation = useNavigation();
 //   let { img, setImg } = useContext(MyContext)
   return (
     <View style={styles.container}>
         <View style={styles.top}>
             <Image style={{flex: 1.4,width: 10, height: 145}} source={require('../assets/ip_xanh.jpg')}></Image>
             <View style={{ flex: 0.1 }}></View>
-            <Text style= {{flex: 2.5, fontWeight: 'bold', fontSize: 17, alignItems: 'center', paddingTop: 10}}>Điện Thoại Vsmart Joy 3 <br></br>Hàng chính hãng</Text>
+            <Text style= {{flex: 2.5, fontWeight: 'bold', fontSize: 17, alignItems: 'center', paddingTop: 10}}>Điện Thoại Vsmart Joy 3 Hàng chính hãng</Text>
           
         </View>
         <View style={styles.center}>

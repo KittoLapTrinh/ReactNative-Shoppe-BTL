@@ -50,7 +50,7 @@ export default function screen4() {
                 </View>
                 <View style={styles.center5}>
                    
-                    <input value='4 MÀU-CHỌN MÀU          >' type='button' style={{width:'350px', height:'35px', borderRadius: '10px', fontSize: '20px', fontWeight: 'bold'}}></input>
+                    <input value='           4 MÀU-CHỌN MÀU          >' type='button' style={{width:'350px', height:'35px', borderRadius: '10px', fontSize: '20px', fontWeight: 'bold'}}></input>
                     
                    
                 </View>
