@@ -5,21 +5,22 @@ import { Button } from 'react-native-web';
 
 
 
-import Lab2_a from './components/lab2_a';
-import Lab2_b from './components/lab2_b';
-import Lab2_c from './components/lab2_c';
-import Lab2_Tiktok_OK from './components/lab2_Tiki_OK';
+
+import Screen1 from './components/screen1';
+import Screen2 from './components/screen2';
+import Screen3 from './components/screen3';
+import Screen4 from './components/screen4';
 
 export default function App()  {
     return (
         <View style={styles.container}>
             
             
-            {/* <Lab2_a/>; */}
-            {/* <Lab2_b/>; */}
-            {/* <Lab2_c/>; */}
-            <Lab2_Tiktok_OK/>;
-  
+
+            {/* <Screen1/> */}
+            {/* <Screen2/> */}
+            {/* <Screen3/> */}
+            <Screen4/>
             
             
         </View>
