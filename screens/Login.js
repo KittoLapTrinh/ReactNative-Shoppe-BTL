@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList, TextInput } from 'react-native-web';
+import { Linking } from 'react-native';
 
 function Login({navigation }){
     const [email, setEmail] = useState('')
@@ -61,26 +62,29 @@ function Login({navigation }){
                     <Button onPress={handleLogin} title='Đăng nhập' style={{}}></Button>
                 </View>
                 
-                <View style={{alignItems: 'flex-end', }}>
+                <View style={{alignItems: 'flex-end', paddingBottom: 10 }}>
                     <Text onPress={()=>{navigation.navigate('Profile')}} style={{color: 'blue', fontSize: 15, justifyContent: 'flex-end'}}>Hoặc đăng nhập bằng SMS</Text>
                 </View>
-                <View style={{ alignItems: 'center', justifyContent: 'center'}}>
+                <View style={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 10}}>
                     <Text style={{color:'#C4C4C4'}}>Hoặc</Text>
                 </View>
 
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => {Linking.openURL('https://www.google.gg');
+                }}>
                     <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, borderColor: '#C4C4C4', marginTop: 5}}>
-                    <Image source={require('../assets/facebook1.png')} style={{width: 50, height: 50,}}></Image>
+                    <Image source={require('../assets/google.png')} style={{width: 50, height: 50,}}></Image>
                         <Text>Tiếp tục với Google</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => {Linking.openURL('https://www.facebook.com');
+                }}>
                     <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, borderColor: '#C4C4C4', marginTop: 5}}>
-                    <Image source={require('../assets/google.png')} style={{width: 50, height: 50,}}></Image>
+                    <Image source={require('../assets/facebook1.png')} style={{width: 50, height: 50,}}></Image>
                         <Text>Tiếp tục với Facebook</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity  onPress={() => {Linking.openURL('https://www.apple.com');
+                }}>
                     <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 5, borderColor: '#C4C4C4', marginTop: 5}}>
                         <Image source={require('../assets/apple.png')} style={{width: 50, height: 50,}}></Image>
                         <Text>Tiếp tục với  Apple</Text>
