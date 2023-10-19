@@ -23,7 +23,7 @@ function Profile({navigation }){
                                 <Button title='Đăng nhập' color='#fa9567' onPress={()=>{navigation.navigate('Login')}}></Button>
                             </View>
                             <View style={{ borderWidth:1, borderColor: '#ffffff'}}>
-                                <Button color='#fa9567' title='Đăng ký'  ></Button>
+                                <Button color='#fa9567' title='Đăng ký' onPress={()=>{navigation.navigate('Register')}} ></Button>
                             </View>
                            
                         </View>
@@ -452,10 +452,13 @@ function Profile({navigation }){
                     <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
                     <Text>Video</Text>
                 </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
-                    <Text>Thông báo</Text>
-                </View>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}}>
+                    <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                        <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
+                        <Text>Thông báo</Text>
+                    </View>
+                </TouchableOpacity>
+                
                 <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
                     <View style={{alignItems: 'center', justifyContent: 'center', backgroundColor: '#5c5c5c'}}>
                             <Image style={{width: 35, height: 35}} source={require('../assets/toi.png')}></Image>

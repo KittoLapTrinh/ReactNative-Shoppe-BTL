@@ -3,7 +3,7 @@ import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 
 import { FlatList, TextInput } from 'react-native-web';
 import { Linking } from 'react-native';
 
-function Login({navigation }){
+function Register({navigation }){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -19,7 +19,7 @@ function Login({navigation }){
                     <Image source={require('../assets/back.png')} style={{width: 40, height: 40, marginRight: 30}}></Image>
                 </TouchableOpacity>
                
-                <Text style={{fontSize: 25, fontWeight: 'bold', justifyContent: 'center', alignItems: 'center', marginHorizontal: 30}}>Đăng nhập</Text>
+                <Text style={{fontSize: 25, fontWeight: 'bold', justifyContent: 'center', alignItems: 'center', marginHorizontal: 30}}>Đăng ký</Text>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
                     <Image source={require('../assets/them.png')} style={{width: 30, height: 30,}}></Image>
                 </TouchableOpacity >
@@ -33,39 +33,22 @@ function Login({navigation }){
                 <View style={{ alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 100, height: 100}} source={require('../assets/avtshopee.png')}></Image>
                 </View>
-                <View style={{flexDirection: 'row',  paddingTop: 40, alignItems: 'center', justifyContent: 'center'}}>
+                <View style={{flexDirection: 'row',  paddingTop: 40, alignItems: 'center', justifyContent: 'center', paddingBottom: 20}}>
                     <View style={{paddingRight: 10}}>
-                        <Image style={{width: 35, height: 35}} source={require('../assets/user.png')}></Image>
+                        <Image style={{width: 35, height: 35}} source={require('../assets/phone.png')}></Image>
                     </View>
                     
-                    <TextInput placeholder="Email/Số điện thoại/Tên đăng nhập" style={{borderWidth: 1, borderColor: '#C4C4C4',  borderRadius: 5 , width: 275, height: 35, fontSize: 16}} onChangeText={(text) => setEmail(text)}></TextInput>
+                    <TextInput placeholder="Số điện thoại" style={{borderWidth: 1, borderColor: '#C4C4C4',  borderRadius: 5 , width: 275, height: 35, fontSize: 16}} onChangeText={(text) => setEmail(text)}></TextInput>
                    
                     
-                </View>
-                <View style={{flexDirection: 'row', paddingTop: 10, alignItems: 'center', justifyContent: 'center'}}>
-                    <View style={{paddingRight: 10}}>
-                        <Image style={{width: 35, height: 35}} source={require('../assets/password.png')}></Image>
-                    </View>
-                   
-                    <TextInput placeholder="Mật khẩu"  style={{borderWidth: 1,  borderColor: '#C4C4C4',  borderRadius: 5 ,width: 200 , height: 35, fontSize: 16}} onChangeText={(text) => setPassword(text)}></TextInput>
-                    <TouchableOpacity>
-                        <Image source={require('../assets/checkpw.png')} style={{width: 20, height: 15, marginTop: 10, marginLeft: 5}}></Image>
-                    </TouchableOpacity>
-                   
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
-                        <Text style={{fontSize: 16, fontWeight: 'bold', color: 'blue',  marginTop: 5, marginLeft: 5}}>Quên?</Text>
-                    </TouchableOpacity>
-                    
-                    
-                </View>
-                <View style={{ paddingTop: 15, marginHorizontal: 10}}>
-                    <Button onPress={handleLogin} title='Đăng nhập' style={{}}></Button>
                 </View>
                 
-                <View style={{alignItems: 'flex-end', paddingBottom: 10 }}>
-                    <Text onPress={()=>{navigation.navigate('Profile')}} style={{color: 'blue', fontSize: 15, justifyContent: 'flex-end'}}>Hoặc đăng nhập bằng SMS</Text>
+                <View style={{ paddingTop: 10, marginHorizontal: 10, paddingBottom: 20}}>
+                    <Button onPress={handleLogin} title='Tiếp' style={{}}></Button>
                 </View>
-                <View style={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 10}}>
+                
+              
+                <View style={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 20}}>
                     <Text style={{color:'#C4C4C4'}}>Hoặc</Text>
                 </View>
 
@@ -95,8 +78,8 @@ function Login({navigation }){
                 
             </View>
             <View style={styles.bottom}>
-                <Text>Bạn chưa có tài khoản? </Text>
-                <Text onPress={()=>{navigation.navigate('Register')}} style={{color:'blue'}}>Đăng ký ngay</Text>
+                <Text>Bạn đã có tài khoản? </Text>
+                <Text onPress={()=>{navigation.navigate('Login')}} style={{color:'blue'}}>Đăng nhập ngay</Text>
             </View>
         </View>
 
@@ -134,4 +117,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Login;
+export default Register;

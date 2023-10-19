@@ -9,6 +9,7 @@ import Live from './screens/Live';
 import Video from './screens/Video';
 import Notify from './screens/Notify';
 import Login from './screens/Login';
+import Register from './screens/Register';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -20,7 +21,7 @@ export default function App() {
   return (
     // <Logo/>
   <NavigationContainer>
-    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Login'> 
+    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Notify'> 
       <Stack.Screen name='Logo' component={Logo}/>
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Mail' component={Mail}/>
@@ -29,6 +30,7 @@ export default function App() {
       <Stack.Screen name='Notify' component={Notify}/>
       <Stack.Screen name='Profile' component={Profile}/>
       <Stack.Screen name='Login' component={Login}/>
+      <Stack.Screen name='Register' component={Register}/>
     </Stack.Navigator>
   </NavigationContainer>
   );
