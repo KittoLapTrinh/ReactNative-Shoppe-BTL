@@ -15,8 +15,10 @@ function Notify({navigation }){
                         <Text style={{fontSize: 25, fontWeight: 'bold'}}>Thông báo</Text>
                     </View>
                     <View style={{ marginHorizontal: 20}}>
-                        
-                        <Image style={{width: 35, height: 35}} source={require('../assets/giohang.png')}></Image>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
+                            <Image style={{width: 35, height: 35}} source={require('../assets/giohang.png')}></Image>
+                        </TouchableOpacity>
+                       
                         
 
                     </View>
