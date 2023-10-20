@@ -4,13 +4,24 @@ import { FlatList, TextInput } from 'react-native-web';
 import { Linking } from 'react-native';
 
 function Register({navigation }){
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+  
 
-    const handleLogin =()=>{
-        console.log('Email: ' , email)
-        console.log('Password: :' , password)
+    const [phone, setPhone] = useState('')
+
+
+
+    const handleCheckPhone =()=>{
+        const phonePattern = /^\d{10}$/; // Adjust the regex pattern for your phone number requirements
+
+    if (phonePattern.test(phone)) {
+        // The phone number matches the regex pattern
+        alert('Valid phone number');
+    } else {
+        // The phone number does not match the regex pattern
+        alert('Invalid phone number format');
     }
+    };
+    
 
     return(
         <View style={styles.container}>
@@ -37,14 +48,16 @@ function Register({navigation }){
                     <View style={{paddingRight: 10}}>
                         <Image style={{width: 35, height: 35}} source={require('../assets/phone.png')}></Image>
                     </View>
-                    
-                    <TextInput placeholder="Số điện thoại" style={{borderWidth: 1, borderColor: '#C4C4C4',  borderRadius: 5 , width: 275, height: 35, fontSize: 16}} onChangeText={(text) => setEmail(text)}></TextInput>
+              
+                    <TextInput placeholder="Số điện thoại" style={{borderWidth: 1, borderColor: '#C4C4C4',  borderRadius: 5 , width: 275, height: 35, fontSize: 16}} onChangeText={setPhone} value={phone}></TextInput>
+               
+                   
                    
                     
                 </View>
                 
                 <View style={{ paddingTop: 10, marginHorizontal: 10, paddingBottom: 20}}>
-                    <Button onPress={handleLogin} title='Tiếp' style={{}}></Button>
+                    <Button onPress={handleCheckPhone} title='Tiếp' style={{}}></Button>
                 </View>
                 
               

@@ -10,6 +10,8 @@ import Video from './screens/Video';
 import Notify from './screens/Notify';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import Cart from './screens/Cart';
+
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,7 +23,7 @@ export default function App() {
   return (
     // <Logo/>
   <NavigationContainer>
-    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Notify'> 
+    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Cart'> 
       <Stack.Screen name='Logo' component={Logo}/>
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Mail' component={Mail}/>
@@ -31,6 +33,7 @@ export default function App() {
       <Stack.Screen name='Profile' component={Profile}/>
       <Stack.Screen name='Login' component={Login}/>
       <Stack.Screen name='Register' component={Register}/>
+      <Stack.Screen name='Cart' component={Cart}/>
     </Stack.Navigator>
   </NavigationContainer>
   );

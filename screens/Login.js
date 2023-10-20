@@ -4,12 +4,51 @@ import { FlatList, TextInput } from 'react-native-web';
 import { Linking } from 'react-native';
 
 function Login({navigation }){
-    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleLogin =()=>{
-        console.log('Email: ' , email)
-        console.log('Password: :' , password)
+    const data =[{
+        userName: 'duongtuankiet',
+        password: '123456'
+    },
+    {
+        userName: 'tamnhu',
+        password: '112233'
+    },
+    {
+        userName: 'vuhuyen',
+        password: '000000'
+    },
+    {
+        userName: 'levu',
+        password: '012345'
+    },
+    {
+        userName: 'thientam',
+        password: '654321'
+    },
+    {
+        userName: 'hieuthuhai',
+        password: '147258369'
+    },
+    
+    ]
+
+    
+
+    const handleCheck =()=>{
+        let found = false
+
+        data.forEach(d =>{
+            if(d.userName === userName && d.password === password)
+                found = true
+        });
+
+        if(found)
+            alert('Log in successfull')
+        else
+            alert('Log in fail')
+      
     }
 
     return(
@@ -38,7 +77,7 @@ function Login({navigation }){
                         <Image style={{width: 35, height: 35}} source={require('../assets/user.png')}></Image>
                     </View>
                     
-                    <TextInput placeholder="Email/Số điện thoại/Tên đăng nhập" style={{borderWidth: 1, borderColor: '#C4C4C4',  borderRadius: 5 , width: 275, height: 35, fontSize: 16}} onChangeText={(text) => setEmail(text)}></TextInput>
+                    <TextInput placeholder="Email/Số điện thoại/Tên đăng nhập" style={{borderWidth: 1, borderColor: '#C4C4C4',  borderRadius: 5 , width: 275, height: 35, fontSize: 16}} onChangeText={setUserName} value={userName}></TextInput>
                    
                     
                 </View>
@@ -47,7 +86,7 @@ function Login({navigation }){
                         <Image style={{width: 35, height: 35}} source={require('../assets/password.png')}></Image>
                     </View>
                    
-                    <TextInput placeholder="Mật khẩu"  style={{borderWidth: 1,  borderColor: '#C4C4C4',  borderRadius: 5 ,width: 200 , height: 35, fontSize: 16}} onChangeText={(text) => setPassword(text)}></TextInput>
+                    <TextInput placeholder="Mật khẩu"  style={{borderWidth: 1,  borderColor: '#C4C4C4',  borderRadius: 5 ,width: 200 , height: 35, fontSize: 16}} onChangeText={setPassword} value={password}></TextInput>
                     <TouchableOpacity>
                         <Image source={require('../assets/checkpw.png')} style={{width: 20, height: 15, marginTop: 10, marginLeft: 5}}></Image>
                     </TouchableOpacity>
@@ -59,7 +98,10 @@ function Login({navigation }){
                     
                 </View>
                 <View style={{ paddingTop: 15, marginHorizontal: 10}}>
-                    <Button onPress={handleLogin} title='Đăng nhập' style={{}}></Button>
+                   
+                        <Button onPress={handleCheck} title='Đăng nhập' style={{}}></Button>
+                
+                   
                 </View>
                 
                 <View style={{alignItems: 'flex-end', paddingBottom: 10 }}>

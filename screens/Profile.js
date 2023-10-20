@@ -8,7 +8,10 @@ function Profile({navigation }){
                 <View style={{ backgroundColor: '#f0743f', flex: 1, flexDirection: 'column', paddingBottom: 15}}>                  
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
                             <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/setting.png')}></Image>
-                            <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/giohang.png')}></Image>
+                            <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
+                                <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/giohang.png')}></Image>
+                            </TouchableOpacity>
+                           
                             <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/messenger.png')}></Image>
                                         
                     </View>
