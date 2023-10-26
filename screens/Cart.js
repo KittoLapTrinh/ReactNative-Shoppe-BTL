@@ -7,8 +7,9 @@ function Cart({navigation }){
   
     const [quantity, setQuantity] = useState(1)
     const [shopName, setShopName] = useState('')
-
-
+    
+    const [selectedItems, setSelectedItems] = useState([]);
+    const [selectAll, setSelectAll] = useState(false);
     const handleInce =()=>{
         setQuantity(quantity +1)
     }
@@ -20,9 +21,33 @@ function Cart({navigation }){
         }
         
     }
+    const handleCheckboxPress = (itemId) => {
+        const updatedSelectedItems = [...selectedItems];
+      
+        if (updatedSelectedItems.includes(itemId)) {
+          // Nếu checkbox đã được chọn, hãy loại bỏ nó khỏi mảng
+          updatedSelectedItems.splice(updatedSelectedItems.indexOf(itemId), 1);
+        } else {
+          // Nếu checkbox chưa được chọn, hãy thêm nó vào mảng
+          updatedSelectedItems.push(itemId);
+        }
+      
+        setSelectedItems(updatedSelectedItems);
+      };
+      const handleSelectAll = () => {
+        setSelectAll(!selectAll);
+        if (selectAll) {
+          setSelectedItems([]); // Bỏ chọn tất cả
+        } else {
+          const allItemIds = data.map((item) => item.id);
+          setSelectedItems(allItemIds); // Chọn tất cả
+        }
+      };
+   
 
     const data=[
         {
+        id:1,
         shopName: 'PHUQUY - THỜI TRANG QUẢNG CHÂU',
         img: require('../assets/aothunbalo.png'),
         name: 'Áo 3 lỗ Nữ dệt kim freesize ',
@@ -31,6 +56,7 @@ function Cart({navigation }){
         price: 'đ95.000'
     },
     {
+        id:2,
         shopName: 'DOMINION - THỜI TRANG UNISEX',
         img: require('../assets/aothun.png'),
         name: 'Áo thun unisex nam nữ form rộng',
@@ -39,6 +65,7 @@ function Cart({navigation }){
         price: 'đ55.000'
     },
     {
+        id:3,
         shopName: '17KM Official Shop',
         img: require('../assets/daychuyen.png'),
         name: 'Dây chuyền cao cấp cỏ 4 lá may mắn',
@@ -65,6 +92,7 @@ function Cart({navigation }){
     
 
     return(
+        
         <View style={styles.container}>
             <View style={styles.top}>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
@@ -88,12 +116,16 @@ function Cart({navigation }){
                 </View>
                 
                 <ScrollView>
-                    <FlatList data={data} renderItem={({item})=>{
+                    <FlatList data={data}  keyExtractor={(item) => item.id.toString()} renderItem={({item})=>{
                         return(
-                             <View style={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 20, }}>
-                                <View>
+                             <View  style={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 20, }}>
+                                <View >
                                     <View style={{flexDirection: 'row', marginTop: 10,alignItems: 'center',}}>
-                                        <CheckBox style={{marginRight: 5,}} title="" ></CheckBox>
+                                    <CheckBox
+                                        value={selectedItems.includes(item.id)}
+                                        onValueChange={() => handleCheckboxPress(item.id)}
+                                        style={styles.checkbox}
+                                    />
                                         <Text style={{marginRight: 50}}>{item.shopName}</Text>
                                         <Image style={{width: 20, height: 20,}} source={require('../assets/next.png')}></Image>
                                         <View  style={{ }}>
@@ -126,11 +158,24 @@ function Cart({navigation }){
                                            
                                         </View>
                                         
+                                        
                                     </View>
 
                                     
                                 
                                 </View>
+                                <View>
+                                    <CheckBox
+                                        title="Chọn tất cả"
+                                        checked={selectAll}
+                                        onValueChange={() => handleSelectAll(item.id)}
+                                        onPress={handleSelectAll} style={{FlatList: 'none'}}
+                                    />   
+                                    <Text>Tất cả</Text>
+                                </View>
+                                 
+                
+
                             </View>
                         )
                     }} >
@@ -140,7 +185,7 @@ function Cart({navigation }){
                         
                     </FlatList>
                 </ScrollView>
-                
+                         
                 
                
 
@@ -149,10 +194,9 @@ function Cart({navigation }){
                 
                 
             </View>
+           
             <View style={styles.bottom}>
-                <View>
-                    
-                </View>
+               
             </View>
         </View>
 

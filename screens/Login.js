@@ -41,7 +41,8 @@ function Login({navigation }){
 
         data.forEach(d =>{
             if(d.userName === userName && d.password === password)
-                found = true
+                found = true , navigation.navigate('Profile')
+            
         });
 
         if(found)
