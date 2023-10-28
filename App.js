@@ -4,13 +4,16 @@ import { StyleSheet, Text, View } from 'react-native';
 import Logo from './screens/Logo';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
-import Mail from './screens/Mail';
+import Mall from './screens/Mall';
 import Live from './screens/Live';
 import Video from './screens/Video';
 import Notify from './screens/Notify';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Cart from './screens/Cart';
+import Chat from './screens/Chat';
+import ProfileNoUser from './screens/ProfileNoUser';
+
 
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,10 +26,10 @@ export default function App() {
   return (
     // <Logo/>
   <NavigationContainer>
-    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Cart'> 
+    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Home'> 
       <Stack.Screen name='Logo' component={Logo}/>
       <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='Mail' component={Mail}/>
+      <Stack.Screen name='Mall' component={Mall}/>
       <Stack.Screen name='Live' component={Live}/>
       <Stack.Screen name='Video' component={Video}/>
       <Stack.Screen name='Notify' component={Notify}/>
@@ -34,6 +37,9 @@ export default function App() {
       <Stack.Screen name='Login' component={Login}/>
       <Stack.Screen name='Register' component={Register}/>
       <Stack.Screen name='Cart' component={Cart}/>
+      <Stack.Screen name='Chat' component={Chat}/>
+      <Stack.Screen name='ProfileNoUser' component={ProfileNoUser}/>
+
     </Stack.Navigator>
   </NavigationContainer>
   );
