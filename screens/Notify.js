@@ -123,19 +123,57 @@ function Notify({navigation }){
                     </View>
                 </View>
                 <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
-                
+                <View style={{flexDirection: 'row', backgroundColor: '#fff2eb'}}>
+                    <View>
+                        <Image style={{width: 70, height: 70}} source={require('../assets/don2.jpg')}></Image>
+                    </View>
+                    <View style={{justifyContent: 'flex-start'}}>
+                        <Text>Chia sẻ nhận xét về sản phẩm</Text>
+                        <Text>Đơn hàng 2310031874F8RV đã hoàn thành.</Text>
+                        <Text>Bạn hãy đánh giá sản phẩm trước ngày 19-10-2023</Text> 
+                        <Text>để nhận 200 xu và giúp người dùng khác hiểu hơn về sản phẩm nhé!</Text>
+                        <Text>07:06   09-10-2023</Text>
+                    </View>
+                </View>
+                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
+                <View style={{flexDirection: 'row', backgroundColor: '#fff2eb'}}>
+                    <View>
+                        <Image style={{width: 70, height: 70}} source={require('../assets/don3.jpg')}></Image>
+                    </View>
+                    <View style={{justifyContent: 'flex-start'}}>
+                        <Text>Chia sẻ nhận xét về sản phẩm</Text>
+                        <Text>Đơn hàng 2310031874F8RV đã hoàn thành.</Text>
+                        <Text>Bạn hãy đánh giá sản phẩm trước ngày 19-10-2023</Text> 
+                        <Text>để nhận 200 xu và giúp người dùng khác hiểu hơn về sản phẩm nhé!</Text>
+                        <Text>07:06   09-10-2023</Text>
+                    </View>
+                </View>
+                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
+                <View style={{flexDirection: 'row', backgroundColor: '#fff2eb'}}>
+                    <View>
+                        <Image style={{width: 70, height: 70}} source={require('../assets/don4.png')}></Image>
+                    </View>
+                    <View style={{justifyContent: 'flex-start'}}>
+                        <Text>Chia sẻ nhận xét về sản phẩm</Text>
+                        <Text>Đơn hàng 2310031874F8RV đã hoàn thành.</Text>
+                        <Text>Bạn hãy đánh giá sản phẩm trước ngày 19-10-2023</Text> 
+                        <Text>để nhận 200 xu và giúp người dùng khác hiểu hơn về sản phẩm nhé!</Text>
+                        <Text>07:06   09-10-2023</Text>
+                    </View>
+                </View>
+                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
                 
                 
             </ScrollView>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingBottom: 35, paddingTop: 35, backgroundColor: '#C4C4C4'}}>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/home.png')}></Image>
                     <Text>Home</Text>
-                </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
-                </View>
+                </TouchableOpacity>   
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>

@@ -3,7 +3,7 @@ import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 
 import { CheckBox, FlatList, TextInput } from 'react-native-web';
 import { Linking } from 'react-native';
 
-function Cart({navigation }){
+function Cart({navigation , itemId}){
   
     const [quantity, setQuantity] = useState(1)
     const [shopName, setShopName] = useState('')
@@ -114,6 +114,7 @@ function Cart({navigation }){
                     <Image source={require('../assets/freeship.png')} style={{width: 30, height: 30, marginLeft: 20}}></Image>
                     <Text style={{fontSize: 13}}>Đừng bỏ lỡ mã Freeship ở mục Shopee Voucher</Text>
                 </View>
+              
                 
                 <ScrollView>
                     <FlatList data={data}  keyExtractor={(item) => item.id.toString()} renderItem={({item})=>{
@@ -127,7 +128,7 @@ function Cart({navigation }){
                                         style={styles.checkbox}
                                     />
                                         <Text style={{marginRight: 50}}>{item.shopName}</Text>
-                                        <Image style={{width: 20, height: 20,}} source={require('../assets/next.png')}></Image>
+                                        <Image style={{width: 20, height: 20, marginLeft: 120}} source={require('../assets/next.png')}></Image>
                                         <View  style={{ }}>
                                             <Text>Sửa</Text>
                                         </View>
@@ -164,15 +165,16 @@ function Cart({navigation }){
                                     
                                 
                                 </View>
-                                <View>
+                               
+                                {/* <View>
                                     <CheckBox
                                         title="Chọn tất cả"
                                         checked={selectAll}
                                         onValueChange={() => handleSelectAll(item.id)}
-                                        onPress={handleSelectAll} style={{FlatList: 'none'}}
+                                        onPress={handleSelectAll}
                                     />   
                                     <Text>Tất cả</Text>
-                                </View>
+                                </View> */}
                                  
                 
 
@@ -185,6 +187,7 @@ function Cart({navigation }){
                         
                     </FlatList>
                 </ScrollView>
+               
                          
                 
                
@@ -196,7 +199,87 @@ function Cart({navigation }){
             </View>
            
             <View style={styles.bottom}>
-               
+                <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View>
+                            <Image style={{width: 35, height: 35}} source={require('../assets/voucher.png')}></Image>
+                        </View>
+                        <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 95}}>
+                            <Text>Shop Voucher giảm đến 65%</Text>
+                            
+                        </View>
+                        
+                        <View style={{alignItems: 'center', justifyContent: 'center' ,}}>
+                            <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
+                    </View>
+                    
+                      
+                </View> 
+                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
+                <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View>
+                        <Image style={{width: 35, height: 35}} source={require('../assets/voucher.png')}></Image>
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 30}}>
+                        <Text>Shopee Voucher</Text>             
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 10}}>
+                        <Text style={{fontSize: 12}}>Chọn hoặc chưa nhập mã</Text>
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' ,}}>
+                        <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
+                    </View>
+                    
+                      
+                </View> 
+                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
+                <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View>
+                        <Image style={{width: 35, height: 35}} source={require('../assets/shoppexu.jpg')}></Image>
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 100}}>
+                        <Text>Bạn chưa chọn sản phẩm ?</Text>             
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 10}}>
+                        
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' ,}}>
+                        <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
+                    </View>
+                    
+                      
+                </View> 
+                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
+              
+                
+                <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
+                    <View>
+                        <CheckBox  keyExtractor={(item) => item.id.toString()}
+                            title="Chọn tất cả"
+                            checked={selectAll}
+                            onPress={handleSelectAll}
+                        />   
+                                   
+                              
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 30}}>
+                        <Text>Tất cả</Text>             
+                    </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 10}}>
+                        <Text>Tổng thanh toán: </Text>
+                    </View>
+                    <View style={{}}>
+                        <TouchableOpacity style={{alignItems: 'center'}} onPress={()=>{
+
+                        
+                        }}>
+                        <Text style={{color: '#FFFFFF', backgroundColor:'#ff8126', width: 80, height: 50,}}>Mua hàng</Text>
+                        
+                        </TouchableOpacity>
+                    </View>
+                    
+                      
+                </View> 
+                
             </View>
         </View>
 
@@ -226,11 +309,7 @@ const styles = StyleSheet.create({
         
     },
     bottom:{
-        flex: 0.7,
-        backgroundColor: '#C4C4C4',
-        flexDirection:'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flex: 1
     }
 })
 

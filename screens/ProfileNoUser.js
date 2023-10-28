@@ -1,25 +1,10 @@
-import { useState } from 'react';
 import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList } from 'react-native-web';
-const data = {
-    user: 'duongtuankiet2002',
-    level: 'Bạc',
-    flow: '17',
-    watching: '211'
 
-}
-
-
-        
-    
-
-function Profile({navigation, user, level, flow, watching }){
-    
+function ProfileNoUser({navigation }){
     return(
         <View style={styles.container}>
-            
-            <ScrollView  bounces={false}>  
-           
+            <ScrollView bounces={false}>    
                 <View style={{ backgroundColor: '#f0743f', flex: 1, flexDirection: 'column', paddingBottom: 15}}>                  
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
                             <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/setting.png')}></Image>
@@ -36,33 +21,14 @@ function Profile({navigation, user, level, flow, watching }){
                         <View style={{alignItems: 'center', justifyContent: 'flex-start', marginLeft: 10, marginBottom: 20}}>
                             <Image style={{width: 50, height: 50}} source={require('../assets/user1.png')}></Image>
                         </View>
-                        <View style={{  marginLeft: 30}}>             
-                            {/* <View style={{marginRight: 10, borderWidth:1, borderColor: '#ffffff'}}>
+                        <View style={{ flexDirection: 'row',  alignItems: 'center', justifyContent: 'flex-end',marginLeft: 130}}>             
+                            <View style={{marginRight: 10, borderWidth:1, borderColor: '#ffffff'}}>
                                 <Button title='Đăng nhập' color='#fa9567' onPress={()=>{navigation.navigate('Login')}}></Button>
                             </View>
                             <View style={{ borderWidth:1, borderColor: '#ffffff'}}>
                                 <Button color='#fa9567' title='Đăng ký' onPress={()=>{navigation.navigate('Register')}} ></Button>
-                            </View> */}
-                            <TouchableOpacity>
-                                <Text style={{color:'#FFFFFF', fontSize:20, fontWeight: 'bold' , marginBottom: 5}}>{data.user}</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Text style={{fontSize: 15, borderColor: '#FFFFFF', borderWidth: 1, borderRadius: 10, backgroundColor: '#FFFFFF', marginRight: 160, marginBottom: 5}}>Thành viên {data.level}   </Text>  
-                            </TouchableOpacity>
-                            <View style={{flexDirection: 'row'}}>
-                                <TouchableOpacity>
-                                    <Text style={{color:'#FFFFFF', fontSize:16, fontWeight: 'bold', marginRight: 20}}>Người theo: {data.flow}</Text>  
-                                </TouchableOpacity>
-                                <TouchableOpacity>
-                                    <Text style={{color:'#FFFFFF', fontSize:16, fontWeight: 'bold'}}>Đang theo dõi: {data.watching}</Text>  
-                                </TouchableOpacity>
                             </View>
-                            
-                            
-                            
                            
-                           
-                            
                         </View>
                     </View>                                   
                 </View>
@@ -136,39 +102,8 @@ function Profile({navigation, user, level, flow, watching }){
 
                 </View>
                 <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
-                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                            <Image style={{width: 50, height: 50,}} source={require('../assets/choxacnhan.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ xác nhận</Text>
-                               
-                            </View>
-                        </View>
-                       
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                        <Image style={{width: 50, height: 50,}} source={require('../assets/cholayhang.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ lấy hàng </Text>
-                                
-                            </View>
-                        </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                        <Image style={{width: 50, height: 50,}} source={require('../assets/danggiaohang.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Đang giao</Text>
-
-                            </View>
-                        </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                        <Image style={{width: 50, height: 50,}} source={require('../assets/danhgia.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Đánh giá</Text>
-                               
-                            </View>
-                        </View>  
-                            
-                    </View>
-                <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
+                
+               
                     
                 <View style={{}}>
                     <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
@@ -473,15 +408,14 @@ function Profile({navigation, user, level, flow, watching }){
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
             </ScrollView>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingBottom: 35, paddingTop: 35, backgroundColor: '#C4C4C4'}}>
-                
-                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
+                <View style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/home.png')}></Image>
                     <Text>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{alignItems: 'center', justifyContent: 'center'}}>
+                </View>
+                <View style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
-                </TouchableOpacity>
+                </View>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>
@@ -518,4 +452,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Profile;
+export default ProfileNoUser;
