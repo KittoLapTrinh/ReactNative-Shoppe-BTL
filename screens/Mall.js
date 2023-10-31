@@ -1,10 +1,45 @@
 import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList, TextInput } from 'react-native-web';
-import { PanGestureHandler, State, } from 'react-native-gesture-handler';
-
+import { PanGestureHandler, State,  } from 'react-native-gesture-handler';
+import React, { useState, useEffect,useRef  } from 'react';
 
 function Mall({navigation }){
+    const [currentPage, setCurrentPage] = useState(0);
+    const flatListRef = useRef(null);
 
+
+
+    const scrollInterval = 1000; // Mili giây (1 giây = 1000 mili giây)
+
+    useEffect(() => {
+    const scrollTimer = setInterval(() => {
+    if (currentPage < data.length - 1) {
+        setCurrentPage(currentPage + 1);
+    } else {
+        setCurrentPage(0); // Trở lại ảnh đầu tiên nếu đã đến ảnh cuối cùng
+    }
+    flatListRef.current.scrollToIndex({
+        index: currentPage,
+        animated: true,
+    });
+    }, scrollInterval);
+        return () => {
+    clearInterval(scrollTimer); // Dừng interval khi component unmount
+    };
+    }, [currentPage]);
+
+    const [time, setTime] = useState(3600);
+    useEffect(() => {
+        const interval = setInterval(() => {
+        if (time > 0) {
+            setTime(time - 1);
+        } else {
+            clearInterval(interval);
+        }
+    }, 1000);
+    
+        return () => clearInterval(interval);
+    }, [time]);
 
    
     let offsetX = 0;
@@ -30,66 +65,112 @@ function Mall({navigation }){
     const data =[
         {
             id: '1',
-            img: require('../assets/sale1.png'),
-            name: 'Shopee Thời Trang'
-            // 
-        
-        },
-        {
-            id: '2',
-            img: require('../assets/sale2.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale20.png'),
+            
         
         },
         {
             id: '1',
-            img: require('../assets/sale3.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale21.png'),
+           
         
         },
         {
             id: '1',
-            img: require('../assets/sale4.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale22.png'),
+          
         
         },
         {
             id: '1',
-            img: require('../assets/sale5.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale23.png'),
+          
+        },
+        {
+            id: '1',
+            img: require('../assets/sale24.png'),
+          
         
         },
         {
             id: '1',
-            img: require('../assets/sale6.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale26.png'),
+            
         
         },
         {
             id: '1',
-            img: require('../assets/sale7.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale27.png'),
+           
         
         },
         {
             id: '1',
-            img: require('../assets/sale8.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale28.png'),
+            
         
         },
         {
             id: '1',
-            img: require('../assets/sale9.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale29.png'),
+           
         
         },
         {
             id: '1',
-            img: require('../assets/sale10.png'),
-            name: 'Shopee Thời Trang'
+            img: require('../assets/sale25.png'),
+            
         
         },
     ]
+
+    const danhmuc= [
+        {
+            id: '1', 
+            img : require('../assets/thethao.png'),
+            name: 'Thể thao & du lịch'
+        },
+        {
+            id: '2', 
+            img : require('../assets/oto.png'),
+            name: 'Ô tô - xe máy - xe đạp'
+        },
+        {
+            id: '3', 
+            img : require('../assets/bachhoa.png'),
+            name: 'Bách hóa Online'
+        },
+        {
+            id: '4', 
+            img : require('../assets/nhacua.png'),
+            name: 'Nhà cửa & Đời Sống'
+        },
+        {
+            id: '5', 
+            img : require('../assets/sacdep.png'),
+            name: 'Sắp đẹp'
+        },
+        {
+            id: '6', 
+            img : require('../assets/thethao.png'),
+            name: 'Thể thao & du lịch'
+        },
+        {
+            id: '7', 
+            img : require('../assets/thethao.png'),
+            name: 'Thể thao & du lịch'
+        },
+        {
+            id: '8', 
+            img : require('../assets/thethao.png'),
+            name: 'Thể thao & du lịch'
+        },
+        {
+            id: '9', 
+            img : require('../assets/thethao.png'),
+            name: 'Thể thao & du lịch'
+        },
+]
 
     return(
         <View style={styles.container}>
@@ -119,8 +200,8 @@ function Mall({navigation }){
             </PanGestureHandler>
             
             
-            <ScrollView horizontal={true} autoplay={true} autoplayInterval={3000} showsPagination={true} >
-                <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale20.png')}></Image>
+            <ScrollView  >
+                    {/* <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale20.png')}></Image>
                     <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale21.png')}></Image>
                     <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale22.png')}></Image>
                     <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale23.png')}></Image>
@@ -129,7 +210,17 @@ function Mall({navigation }){
                     <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale27.png')}></Image>
                     <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale28.png')}></Image>
                     <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale29.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale25.png')}></Image>    
+                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale25.png')}></Image>     */}
+                <FlatList  ref={flatListRef} 
+                    horizontal data={data}  
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                    <Image source={item.img} style={{width: 390, height: 250}} />
+                    )}
+                    pagingEnabled
+                >
+
+                </FlatList>
             </ScrollView>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginHorizontal: 5, marginVertical: 5}}>
                 <View style={{flexDirection: 'row',}}>

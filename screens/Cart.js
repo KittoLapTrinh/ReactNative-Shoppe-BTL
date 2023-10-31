@@ -10,6 +10,7 @@ function Cart({navigation , itemId}){
     
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+    
     const handleInce =()=>{
         setQuantity(quantity +1)
     }
@@ -268,11 +269,11 @@ function Cart({navigation , itemId}){
                         <Text>Tổng thanh toán: </Text>
                     </View>
                     <View style={{}}>
-                        <TouchableOpacity style={{alignItems: 'center'}} onPress={()=>{
+                        <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{
 
                         
                         }}>
-                        <Text style={{color: '#FFFFFF', backgroundColor:'#ff8126', width: 80, height: 50,}}>Mua hàng</Text>
+                        <Text style={{color: '#FFFFFF', backgroundColor:'#ff8126', width: 80, height: 50, paddingTop: 15, paddingLeft: 7}}>Mua hàng</Text>
                         
                         </TouchableOpacity>
                     </View>

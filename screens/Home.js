@@ -2,23 +2,46 @@ import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 
 import { FlatList, TextInput } from 'react-native-web';
 import { PanGestureHandler, State} from 'react-native-gesture-handler';
 import Countdown from 'react-native-countdown-component';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef  } from 'react';
 
 function Home({navigation }){
 
+    const [currentPage, setCurrentPage] = useState(0);
+    const flatListRef = useRef(null);
+
+
+
+    const scrollInterval = 1000; // Mili giây (1 giây = 1000 mili giây)
+
+    useEffect(() => {
+    const scrollTimer = setInterval(() => {
+    if (currentPage < data.length - 1) {
+        setCurrentPage(currentPage + 1);
+    } else {
+        setCurrentPage(0); // Trở lại ảnh đầu tiên nếu đã đến ảnh cuối cùng
+    }
+    flatListRef.current.scrollToIndex({
+        index: currentPage,
+        animated: true,
+    });
+    }, scrollInterval);
+        return () => {
+    clearInterval(scrollTimer); // Dừng interval khi component unmount
+    };
+    }, [currentPage]);
 
     const [time, setTime] = useState(3600);
     useEffect(() => {
         const interval = setInterval(() => {
-          if (time > 0) {
+        if (time > 0) {
             setTime(time - 1);
-          } else {
+        } else {
             clearInterval(interval);
-          }
-        }, 1000);
+        }
+    }, 1000);
     
         return () => clearInterval(interval);
-      }, [time]);
+    }, [time]);
 
 
 
@@ -46,65 +69,66 @@ function Home({navigation }){
         {
             id: '1',
             img: require('../assets/sale1.png'),
-            name: 'Shopee Thời Trang'
-            // 
+           
         
         },
         {
             id: '2',
             img: require('../assets/sale2.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
         {
-            id: '1',
+            id: '3',
             img: require('../assets/sale3.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
         {
             id: '1',
             img: require('../assets/sale4.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
         {
             id: '1',
             img: require('../assets/sale5.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
         {
             id: '1',
             img: require('../assets/sale6.png'),
-            name: 'Shopee Thời Trang'
+         
         
         },
         {
             id: '1',
             img: require('../assets/sale7.png'),
-            name: 'Shopee Thời Trang'
+          
         
         },
         {
             id: '1',
             img: require('../assets/sale8.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
         {
             id: '1',
             img: require('../assets/sale9.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
         {
             id: '1',
             img: require('../assets/sale10.png'),
-            name: 'Shopee Thời Trang'
+           
         
         },
     ]
+
+ 
 
     return(
         <View style={styles.container}>
@@ -149,7 +173,17 @@ function Home({navigation }){
 
 
             <ScrollView>
-                <ScrollView horizontal={true} autoplay={true} autoplayInterval={3000} showsPagination={true} >
+                <FlatList  ref={flatListRef} 
+                horizontal data={data}  
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <Image source={item.img} style={{width: 390, height: 190}} />
+                    )}
+                    pagingEnabled
+                >
+
+                </FlatList>
+                {/* <ScrollView horizontal={true} autoplay={true} autoplayInterval={3000} showsPagination={true} >
                     <Image style={{width: 390, height: 140}} source={require('../assets/sale3.png')}></Image>
                     <Image style={{width: 390, height: 140}} source={require('../assets/sale1.png')}></Image>
                     <Image style={{width: 390, height: 140}} source={require('../assets/sale2.png')}></Image>
@@ -160,7 +194,7 @@ function Home({navigation }){
                     <Image style={{width: 390, height: 140}} source={require('../assets/sale8.png')}></Image>
                     <Image style={{width: 390, height: 140}} source={require('../assets/sale9.png')}></Image>
                     <Image style={{width: 390, height: 140}} source={require('../assets/sale10.png')}></Image>
-                </ScrollView>
+                </ScrollView> */}
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', borderBlockColor: '#C4C4C4', borderWidth: 0.5, borderRadius: 5, marginHorizontal: 5}}>
                     <View>
                         <Image style={{width: 35, height: 35}} source={require('../assets/scan.png')}></Image>
