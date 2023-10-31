@@ -6,7 +6,7 @@ import Home from './screens/Home';
 import Profile from './screens/Profile';
 import Mall from './screens/Mall';
 import Live from './screens/Live';
-import Video from './screens/Video';
+import ScreenVideo from './screens/ScreenVideo';
 import Notify from './screens/Notify';
 import Login from './screens/Login';
 import Register from './screens/Register';
@@ -26,12 +26,12 @@ export default function App() {
   return (
     // <Logo/>
   <NavigationContainer>
-    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Home'> 
+    <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Logo'> 
       <Stack.Screen name='Logo' component={Logo}/>
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Mall' component={Mall}/>
       <Stack.Screen name='Live' component={Live}/>
-      <Stack.Screen name='Video' component={Video}/>
+      <Stack.Screen name='ScreenVideo' component={ScreenVideo}/>
       <Stack.Screen name='Notify' component={Notify}/>
       <Stack.Screen name='Profile' component={Profile}/>
       <Stack.Screen name='Login' component={Login}/>
