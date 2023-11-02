@@ -204,7 +204,7 @@ function Profile({navigation, user, level, flow, watching }){
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                             <Image style={{width: 50, height: 50,}} source={require('../assets/vishoppepay.jpg')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ xác nhận</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Ví ShopeePay</Text>
                                
                             </View>
                         </View>
@@ -212,14 +212,14 @@ function Profile({navigation, user, level, flow, watching }){
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/shoppexu.jpg')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ lấy hàng </Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Shopee Xu</Text>
                                 
                             </View>
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/voucher.png')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Đang giao</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Kho Voucher</Text>
                             </View>
                         </View>                     
                     </View>

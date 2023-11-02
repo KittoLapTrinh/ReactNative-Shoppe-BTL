@@ -123,6 +123,34 @@ function Mall({navigation }){
         
         },
     ]
+    // <ScrollView  horizontal={true}   style={{paddingVertical: 10}}>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thethao.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/oto.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/bachhoa.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/nhacua.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sacdep.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/maytinh.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/voucher.gif')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/camera1.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thoitrang.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/tui.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/mevabe.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/pet.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/nhasach.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thoitrangtreem.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/dienthoai.gif')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/phukien.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/dongho.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thietbidientu.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/giaynam.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/dochoi.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thoitrangnam.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/daydepnu.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thietbidientu.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/giatgiu.png')}></Image>
+    //                 <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/suckhoe.png')}></Image>
+                    
+    //             </ScrollView>
 
     const danhmuc= [
         {
@@ -152,25 +180,133 @@ function Mall({navigation }){
         },
         {
             id: '6', 
-            img : require('../assets/thethao.png'),
-            name: 'Thể thao & du lịch'
+            img : require('../assets/maytinh.png'),
+            name: 'Máy tính & Laptop'
         },
         {
             id: '7', 
-            img : require('../assets/thethao.png'),
-            name: 'Thể thao & du lịch'
+            img : require('../assets/voucher.gif'),
+            name: 'Voucher & Dịch vụ'
         },
         {
             id: '8', 
-            img : require('../assets/thethao.png'),
-            name: 'Thể thao & du lịch'
+            img : require('../assets/camera1.png'),
+            name: 'Máy ảnh - Máy quay phim'
         },
         {
             id: '9', 
-            img : require('../assets/thethao.png'),
-            name: 'Thể thao & du lịch'
+            img : require('../assets/thoitrang.png'),
+            name: 'Thời Trang Nữ'
         },
+        {
+            id: '10', 
+            img : require('../assets/tui.png'),
+            name: 'Túi Ví Nữ'
+        },
+        {
+            id: '11', 
+            img : require('../assets/mevabe.png'),
+            name: 'Mẹ & Bé'
+        },
+        {
+            id: '12', 
+            img : require('../assets/pet.png'),
+            name: 'Thú cưng'
+        },
+        {
+            id: '13', 
+            img : require('../assets/nhasach.png'),
+            name: 'Nhà Sách Online'
+        },
+        {
+            id: '14', 
+            img : require('../assets/thoitrangtreem.png'),
+            name: 'Thời Trang Trẻ Em'
+        },
+        {
+            id: '15', 
+            img : require('../assets/dienthoai.gif'),
+            name: 'Điện Thoại & Phụ Kiện'
+        },
+        {
+            id: '16', 
+            img : require('../assets/phukien.png'),
+            name: 'Phụ Kiện & Trang Sức Nữ'
+        },
+        {
+            id: '17', 
+            img : require('../assets/dongho.png'),
+            name: 'Đồng Hồ'
+        },
+        {
+            id: '18', 
+            img : require('../assets/computer.png'),
+            name: 'Thiết Bị Điện Tử'
+        },
+        {
+            id: '19', 
+            img : require('../assets/giaynam.png'),
+            name: 'Giày Dép nam'
+        },
+        {
+            id: '20', 
+            img : require('../assets/dochoi.png'),
+            name: 'Đồ Chơi'
+        },
+        {
+            id: '21', 
+            img : require('../assets/thoitrangnam.png'),
+            name: 'Thời Trang Nam'
+        },
+        {
+            id: '22', 
+            img : require('../assets/daydepnu.png'),
+            name: 'Giày Dép Nữ'
+        },
+        {
+            id: '23', 
+            img : require('../assets/thietbidientu.png'),
+            name: 'Thiết Bị Điện Gia Dụng'
+        },
+        {
+            id: '24', 
+            img : require('../assets/giatgiu.png'),
+            name: 'Giặt giũ & Chăm sóc'
+        },
+        {
+            id: '25', 
+            img : require('../assets/suckhoe.png'),
+            name: 'Sức Khỏe'
+        },
+
 ]
+    const data1 =[
+        {
+            id: '1',
+            img: require('../assets/PREMIUM.png'),
+            name: 'SHOPEE PREMIUM'      
+        },
+        {
+            id: '2',
+            img: require('../assets/book.png'),
+            name: 'SHOPEE BOOK CLUB'      
+        },
+        {
+            id: '3',
+            img: require('../assets/membership.png'),
+            name: 'BRAND MEMBERSHIP'      
+        },
+        {
+            id: '4',
+            img: require('../assets/quocte.png'),
+            name: 'THƯƠNG HIỆU QUỐC TẾ'      
+        },
+        {
+            id: '5',
+            img: require('../assets/COUNTER.png'),
+            name: 'SAMPLING COUNTER'      
+        },
+    ]
 
     return(
         <View style={styles.container}>
@@ -193,36 +329,20 @@ function Mall({navigation }){
             </View>
             <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
             
-            <PanGestureHandler onGestureEvent={onGestureEvent} onHandlerStateChange={onHandlerStateChange}>
-                <View style={{flexDirection: 'row'}}>
-                    
-                </View>
-            </PanGestureHandler>
+           
             
             
             <ScrollView  >
-                    {/* <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale20.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale21.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale22.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale23.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale24.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale26.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale27.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale28.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale29.png')}></Image>
-                    <Image style={{width: 390, height: 140, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale25.png')}></Image>     */}
+                   
                 <FlatList  ref={flatListRef} 
                     horizontal data={data}  
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
                     <Image source={item.img} style={{width: 390, height: 250}} />
                     )}
-                    pagingEnabled
-                >
-
+                    pagingEnabled>
                 </FlatList>
-            </ScrollView>
-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginHorizontal: 5, marginVertical: 5}}>
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginHorizontal: 5, marginVertical: 5}}>
                 <View style={{flexDirection: 'row',}}>
                     <Image style={{width: 15, height: 15}} source={require('../assets/turnback.png')}></Image>
                     <Text style={{fontSize: 13}}>Miễn phí trả hàng</Text>
@@ -246,80 +366,113 @@ function Mall({navigation }){
                    
                 
             </View>
-            <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
-            {/* <ScrollView horizontal={true}>
-                <FlatList data={data}  numColumns={2}   renderItem = {({item})=>{
+            {/* <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10}}></View> */}
+            <ScrollView horizontal={true}>
+                <FlatList data={data1}  numColumns={5}   renderItem = {({item})=>{
                     return(
-                        <View>
-                            <Image source={item.img} style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}}></Image>
+                        <View style={{alignItems: 'center',paddingHorizontal: 4, paddingTop: 10,  }}>
+                            <View>
+                                <Image source={item.img} style={{width: 60, height: 60, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}}></Image>
+                            </View>
+                            <View style={{alignItems: 'center',paddingLeft: 20}}>
+                                <Text style={{width: 72, height: 50, fontSize: 11}}>{item.name}</Text>
+                            </View>
+                         
                         </View>
                     )
                 }}>
 
                 </FlatList>
-            </ScrollView> */}
+                
 
+            </ScrollView>
+            
+            <View style={{alignItems: 'center'}}>
+                <Image source={require('../assets/trainghiem.png')} style={{width: 380, height: 130, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}}></Image>
+            </View>
+            <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10, paddingTop: 1}}></View>
 
             <ScrollView>
-                <ScrollView  horizontal={true} style={{paddingVertical: 10}} >
-       
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale20.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale21.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale22.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale23.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale24.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale26.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale27.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale28.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale29.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale25.png')}></Image>    
-                </ScrollView>
-                <ScrollView  horizontal={true}   style={{paddingVertical: 10}}>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/fashion.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale1.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale2.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale4.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale5.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale6.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale7.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale8.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale9.png')}></Image>
-                    <Image style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale10.png')}></Image>    
-                </ScrollView>
-                <ScrollView  horizontal={true}   style={{paddingVertical: 10}}>
-                    <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale11.png')}></Image>
-                    <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale12.png')}></Image>
-                    <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/sale13.png')}></Image>
-                    
-                </ScrollView>
+               
                 <ScrollView  horizontal={true}   style={{paddingVertical: 10}}>
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
-                    <View>
+                   
                         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
                             <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 150, flexDirection: 'row'}}>
                                 <Text style={{fontSize: 20, fontWeight : 'bold'}}>Danh mục</Text>
-                                
-                                
                             </View>
-                            
-                            
                             <View style={{alignItems: 'center', justifyContent: 'center' , flexDirection: 'row'}}>
                                 <Text style={{fontSize: 14, }}> Tìm hiểu ngay </Text>
                                 <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
-                            
                             </View>
                             
 
                         </View>
                         
-                    </View>
+                        
                    
                     
                     
                    
                     
                 </ScrollView>
-                <ScrollView  horizontal={true}   style={{paddingVertical: 10}}>
+                <ScrollView horizontal={true}  >
+                    <FlatList  data={danhmuc}  keyExtractor={item => item.id.toString()} numColumns={25} renderItem = {({item})=>{
+                        return(
+                            <View style={{}}>
+                                <View style={{ paddingHorizontal: 5, paddingVertical: 5}}>
+                                    <Image  source={item.img} style={{width: 70, height: 70, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1,}}></Image>
+                                </View>
+                                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                                    <Text style={{fontSize: 10, width: 70, height: 55, fontWeight: 'bold'}}>{item.name}</Text>
+                                </View>
+                            
+                                </View>
+                        )
+                    }}>
+
+                    </FlatList>
+                </ScrollView>
+                <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10, paddingTop: 1}}></View>
+                <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                        <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: 10}}>
+                            <Text style={{fontSize: 14,color: 'red', fontWeight : 'bold'}}>THƯƠNG HIỆU NỔI BẬT TRONG NGÀY</Text>
+                        </View>
+                        <View style={{alignItems: 'center', justifyContent: 'center' , flexDirection: 'row'}}>
+                            <Text style={{fontSize: 14, }}> Xem tất cả </Text>
+                            <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
+                        </View>
+                    </View>
+                    {/* <ScrollView  style={{flexDirection: 'row',}}  >
+                            <FlatList  data={goiY}  keyExtractor={item => item.id.toString()} numColumns={2} renderItem = {({item})=>{
+                                return(
+                                    <View style={{}}>
+                                        <View style={{ paddingHorizontal: 20}}>
+                                            <Image  source={item.img} style={{width: 160, height: 160, borderColor: '#C4C4C4', borderWidth: 1,}}></Image>
+                                        </View>
+                                        <View style={{alignItems: 'center', justifyContent: 'center' }}>
+                                            <Text style={{fontSize: 14, width: 160, height: 60,fontWeight: 'bold',}}>{item.name}</Text>
+                                        </View>
+                                        <View style={{flexDirection: 'row', justifyContent: 'space-around', paddingLeft: 5}}>
+                                            <View style={{}}>
+                                                <Text style={{color: 'red', fontWeight: 'bold', fontSize: 18}}>{item.price}</Text>
+                                            </View>
+                                            <View style={{}}>
+                                                <Text style={{fontSize: 12}}>{item.sold}</Text>
+                                            </View>
+                                        </View>
+                                        
+                                        
+                                    
+                                    </View>
+
+                                )
+                            }}>
+
+                            </FlatList>
+                        </ScrollView> */}
+                        
+                {/* <ScrollView  horizontal={true}   style={{paddingVertical: 10}}>
                     <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/thethao.png')}></Image>
                     <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/oto.png')}></Image>
                     <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/bachhoa.png')}></Image>
@@ -346,9 +499,12 @@ function Mall({navigation }){
                     <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/giatgiu.png')}></Image>
                     <Image style={{width: 130, height: 80, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}} source={require('../assets/suckhoe.png')}></Image>
                     
-                </ScrollView>
+                </ScrollView> */}
 
+                </ScrollView>
+                
             </ScrollView>
+            
             
             
           
