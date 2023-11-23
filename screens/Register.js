@@ -26,7 +26,7 @@ function Register({navigation }){
     return(
         <View style={styles.container}>
             <View style={styles.top}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('ProfileNoUser')}}>
                     <Image source={require('../assets/back.png')} style={{width: 40, height: 40, marginRight: 30}}></Image>
                 </TouchableOpacity>
                

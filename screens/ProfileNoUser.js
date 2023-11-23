@@ -408,14 +408,14 @@ function ProfileNoUser({navigation }){
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
             </ScrollView>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingBottom: 35, paddingTop: 35, backgroundColor: '#C4C4C4'}}>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/home.png')}></Image>
                     <Text>Home</Text>
-                </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                </TouchableOpacity>
+                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Mall')}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>

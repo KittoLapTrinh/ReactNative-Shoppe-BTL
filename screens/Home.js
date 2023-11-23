@@ -4,7 +4,10 @@ import { PanGestureHandler, State} from 'react-native-gesture-handler';
 import Countdown from 'react-native-countdown-component';
 import React, { useState, useEffect,useRef  } from 'react';
 
+
 function Home({navigation }){
+
+
 
     const [currentPage, setCurrentPage] = useState(0);
     const flatListRef = useRef(null);
@@ -64,6 +67,9 @@ function Home({navigation }){
           }
         }
       };
+
+    const [searchText, setSearchText] = useState('')
+    // const filteredData = goiY.filter(item => item.name.includes(searchText))
 
     const data =[
         {
@@ -312,8 +318,62 @@ function Home({navigation }){
             price: '125.000đ', 
             sold: 'Đã bán 50.8k',
         },
-        
-
+        {
+            id: '3',
+            img: require('../assets/dothethao.png'),
+            name: 'Quần áo bóng đá đội tuyển achentina mẫu mới nhất',
+            price: '135.000đ', 
+            sold: 'Đã bán 90.7k',
+        },
+        {
+            id: '4',
+            img: require('../assets/denled.png'),
+            name: 'Đèn led dây, đèn led trang trí dây đồng mini',
+            price: '65.000đ', 
+            sold: 'Đã bán 115.3k',
+        },    
+        {
+            id: '5',
+            img: require('../assets/nuochoanu.png'),
+            name: 'Narciso rodriguez - Nước hoa nữ chính hãng nhẹ nhàng ',
+            price: '1.009.000đ', 
+            sold: 'Đã bán 27.9k',
+        }, 
+        {
+            id: '6',
+            img: require('../assets/oplung.png'),
+            name: 'Ốp lưng iphone Rainbow X/XS/11/12/13/14',
+            price: '105.000đ', 
+            sold: 'Đã bán 35.1k',
+        },   
+        {
+            id: '7',
+            img: require('../assets/giaytaynam.png'),
+            name: 'Giày tây nam trẻ trung vân da hàng hiệu Tâm Anh',
+            price: '1.275.000đ', 
+            sold: 'Đã bán 16.5k',
+        },
+        {
+            id: '8',
+            img: require('../assets/suahop.png'),
+            name: 'Sữa Similac IQ HMO Gold Lable số 3 400g',
+            price: '602.000đ', 
+            sold: 'Đã bán 56.4k',
+        }, 
+        {
+            id: '9',
+            img: require('../assets/mubaohiem.png'),
+            name: 'Mũ bảo hiểm 3/4 KYT VENOM OPEN FACE SOLID',
+            price: '345.000đ', 
+            sold: 'Đã bán 76.2k',
+        },  
+        {
+            id: '10',
+            img: require('../assets/aovest.png'),
+            name: 'Áo vest nam đen 2 lớp đẹp, cao cấp',
+            price: '515.000đ', 
+            sold: 'Đã bán 101.8k',
+        },   
     ]
 
  
@@ -325,7 +385,8 @@ function Home({navigation }){
                 
                 <View style={{flexDirection: 'row',  borderWidth: 1, borderColor: 'gray',}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/look.png')}></Image>
-                   <TextInput  placeholder="Áo thun nam" style={{color: '#C4C4C4', fontSize:15}}></TextInput>
+                   <TextInput   placeholder="Áo thun nam" style={{color: '#C4C4C4', fontSize:15}}></TextInput>
+                    
                    <Image style={{width: 35, height: 35}} source={require('../assets/camera.png')}></Image>
                 </View>
                 <View style={{ marginHorizontal: 20}}>
@@ -333,9 +394,9 @@ function Home({navigation }){
                         <Image style={{width: 35, height: 35}} source={require('../assets/giohang.png')}></Image>
                     </TouchableOpacity>
                 </View>
-                <View>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/messenger.png')}></Image>
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
             
@@ -446,7 +507,7 @@ function Home({navigation }){
                                         <View style={{ paddingHorizontal: 10 }}>
                                             <Image  source={item.img} style={{width: 110, height: 110, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1,}}></Image>
                                         </View>
-                                        <View style={{alignItems: 'center', }}>
+                                        <View style={{alignItems: 'center', marginBottom: 5}}>
                                             <Text style={{fontSize: 16, fontWeight: 'bold', color: 'red', width: 70, height: 33}}>{item.price}</Text>
                                         </View>
                                         <View style={{flexDirection: 'row', paddingLeft: 15, }}>
@@ -539,7 +600,7 @@ function Home({navigation }){
                     <Text>Thông báo</Text>
                 </TouchableOpacity>
               
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('ProfileNoUser')}}>
                     <View style={{alignItems: 'center', justifyContent: 'center', }}>
                         <Image style={{width: 35, height: 35}} source={require('../assets/toi.png')}></Image>
                         <Text>Tôi</Text>

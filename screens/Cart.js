@@ -104,7 +104,7 @@ function Cart({navigation , itemId}){
                 <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
                    <Text style={{fontSize: 20}}>Xong</Text>
                 </TouchableOpacity >
-               <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+               <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
                     <Image source={require('../assets/mess.png')} style={{width: 45, height: 45, marginLeft: 20}}></Image>
                </TouchableOpacity>
                 

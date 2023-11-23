@@ -283,7 +283,7 @@ function Mall({navigation }){
     const data1 =[
         {
             id: '1',
-            img: require('../assets/PREMIUM.png'),
+            img: require('../assets/premium.png'),
             name: 'SHOPEE PREMIUM'      
         },
         {
@@ -306,6 +306,78 @@ function Mall({navigation }){
             img: require('../assets/COUNTER.png'),
             name: 'SAMPLING COUNTER'      
         },
+    ]
+    const goiY = [
+        {
+            id: '1',
+            img: require('../assets/sach.png'),
+            name: 'Sách - Đắc Nhân Tâm (Khổ Lớn - Tái bản 2024)',
+            price: '99.000đ',
+            sold: 'Đã bán 52,1k',
+        },
+        {
+            id: '2',
+            img: require('../assets/aonam.png'),
+            name: 'Áo sơ mi trắng nam AKUBA tay dài đi học, đi làm form slimfit',
+            price: '125.000đ', 
+            sold: 'Đã bán 50.8k',
+        },
+        {
+            id: '3',
+            img: require('../assets/dothethao.png'),
+            name: 'Quần áo bóng đá đội tuyển achentina mẫu mới nhất',
+            price: '135.000đ', 
+            sold: 'Đã bán 90.7k',
+        },
+        {
+            id: '4',
+            img: require('../assets/denled.png'),
+            name: 'Đèn led dây, đèn led trang trí dây đồng mini',
+            price: '65.000đ', 
+            sold: 'Đã bán 115.3k',
+        },    
+        {
+            id: '5',
+            img: require('../assets/nuochoanu.png'),
+            name: 'Narciso rodriguez - Nước hoa nữ chính hãng nhẹ nhàng ',
+            price: '1.009.000đ', 
+            sold: 'Đã bán 27.9k',
+        }, 
+        {
+            id: '6',
+            img: require('../assets/oplung.png'),
+            name: 'Ốp lưng iphone Rainbow X/XS/11/12/13/14',
+            price: '105.000đ', 
+            sold: 'Đã bán 35.1k',
+        },   
+        {
+            id: '7',
+            img: require('../assets/giaytaynam.png'),
+            name: 'Giày tây nam trẻ trung vân da hàng hiệu Tâm Anh',
+            price: '1.275.000đ', 
+            sold: 'Đã bán 16.5k',
+        },
+        {
+            id: '8',
+            img: require('../assets/suahop.png'),
+            name: 'Sữa Similac IQ HMO Gold Lable số 3 400g',
+            price: '602.000đ', 
+            sold: 'Đã bán 56.4k',
+        }, 
+        {
+            id: '9',
+            img: require('../assets/mubaohiem.png'),
+            name: 'Mũ bảo hiểm 3/4 KYT VENOM OPEN FACE SOLID',
+            price: '345.000đ', 
+            sold: 'Đã bán 76.2k',
+        },  
+        {
+            id: '10',
+            img: require('../assets/aovest.png'),
+            name: 'Áo vest nam đen 2 lớp đẹp, cao cấp',
+            price: '515.000đ', 
+            sold: 'Đã bán 101.8k',
+        },   
     ]
 
     return(
@@ -370,12 +442,12 @@ function Mall({navigation }){
             <ScrollView horizontal={true}>
                 <FlatList data={data1}  numColumns={5}   renderItem = {({item})=>{
                     return(
-                        <View style={{alignItems: 'center',paddingHorizontal: 4, paddingTop: 10,  }}>
+                        <View style={{alignItems: 'center', paddingTop: 10,  }}>
                             <View>
-                                <Image source={item.img} style={{width: 60, height: 60, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}}></Image>
+                                <Image source={item.img} style={{width: 40, height: 40, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}}></Image>
                             </View>
                             <View style={{alignItems: 'center',paddingLeft: 20}}>
-                                <Text style={{width: 72, height: 50, fontSize: 11}}>{item.name}</Text>
+                                <Text style={{width: 58, height: 50, fontSize: 11}}>{item.name}</Text>
                             </View>
                          
                         </View>
@@ -434,15 +506,47 @@ function Mall({navigation }){
                     </FlatList>
                 </ScrollView>
                 <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10, paddingTop: 1}}></View>
+                <View style={{alignItems: 'center'}}>
+                    <Image source={require('../assets/deal.png')} style={{width: 380, height: 180, borderColor: '#C4C4C4', borderRadius: 10, borderWidth: 1}}></Image>
+                </View>
+                <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10, paddingTop: 1}}></View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-                        <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: 10}}>
-                            <Text style={{fontSize: 14,color: 'red', fontWeight : 'bold'}}>THƯƠNG HIỆU NỔI BẬT TRONG NGÀY</Text>
-                        </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center' , flexDirection: 'row'}}>
-                            <Text style={{fontSize: 14, }}> Xem tất cả </Text>
-                            <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
-                        </View>
+                    <View style={{alignItems: 'center', flexDirection: 'row', paddingBottom: 10}}>
+                        <Text style={{fontSize: 14,color: 'red', fontWeight : 'bold'}}>THƯƠNG HIỆU NỔI BẬT TRONG NGÀY</Text>
                     </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center' , flexDirection: 'row'}}>
+                        <Text style={{fontSize: 14, }}> Xem tất cả </Text>
+                        <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
+                    </View>   
+                </View>
+                <ScrollView  style={{flexDirection: 'row',}}  >
+                    <FlatList  data={goiY}  keyExtractor={item => item.id.toString()} numColumns={2} renderItem = {({item})=>{
+                        return(
+                            <View style={{}}>
+                                <View style={{ paddingHorizontal: 20}}>
+                                    <Image  source={item.img} style={{width: 160, height: 160, borderColor: '#C4C4C4', borderWidth: 1,}}></Image>
+                                </View>
+                                    <View style={{alignItems: 'center', justifyContent: 'center' }}>
+                                    <Text style={{fontSize: 14, width: 160, height: 60,fontWeight: 'bold',}}>{item.name}</Text>
+                                </View>
+                                <View style={{flexDirection: 'row', justifyContent: 'space-around', paddingLeft: 5}}>
+                                    <View style={{}}>
+                                        <Text style={{color: 'red', fontWeight: 'bold', fontSize: 18}}>{item.price}</Text>
+                                    </View>
+                                    <View style={{}}>
+                                        <Text style={{fontSize: 12}}>{item.sold}</Text>
+                                    </View>
+                                </View>
+                                        
+                                        
+                                    
+                            </View>
+
+                        )
+                    }}>
+
+                    </FlatList>
+                </ScrollView>
                     {/* <ScrollView  style={{flexDirection: 'row',}}  >
                             <FlatList  data={goiY}  keyExtractor={item => item.id.toString()} numColumns={2} renderItem = {({item})=>{
                                 return(

@@ -2,12 +2,13 @@ import { useState } from 'react';
 import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList } from 'react-native-web';
 const data = {
-    user: 'duongtuankiet2002',
+    user: 'duongtuankiet',
     level: 'Bạc',
     flow: '17',
     watching: '211'
-
 }
+    
+
 
 
         
@@ -26,8 +27,10 @@ function Profile({navigation, user, level, flow, watching }){
                             <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
                                 <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/giohang.png')}></Image>
                             </TouchableOpacity>
-                           
+                            <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
                             <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/messenger.png')}></Image>
+                            </TouchableOpacity>
+                            
                                         
                     </View>
                     
@@ -118,13 +121,14 @@ function Profile({navigation, user, level, flow, watching }){
                       
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-                        <View>
+                        <TouchableOpacity onPress={() =>{navigation.navigate('ChoXacNhan')}} >
                             <Image style={{width: 35, height: 35}} source={require('../assets/order.png')}></Image>
-                        </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 70}}>
+                        </TouchableOpacity>
+                           
+                        <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center' , marginRight: 70}} onPress={() =>{navigation.navigate('ChoXacNhan')}} >
                             <Text>Đơn mua</Text>
-                            
-                        </View>
+                        </TouchableOpacity>
+                        
                         <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 10}}>
                             <Text style={{fontSize: 12}}>Xem lịch sử mua hàng</Text>
                         </View>
@@ -137,37 +141,36 @@ function Profile({navigation, user, level, flow, watching }){
                 </View>
                 <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                            <Image style={{width: 50, height: 50,}} source={require('../assets/choxacnhan.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ xác nhận</Text>
-                               
-                            </View>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ChoXacNhan')} style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
+                        <Image style={{width: 50, height: 50,}} source={require('../assets/choxacnhan.png')}></Image>
+                        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ xác nhận</Text> 
                         </View>
-                       
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
+                    </TouchableOpacity >
+                    <TouchableOpacity  onPress={()=>navigation.navigate('ChoLayHang')} style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/cholayhang.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ lấy hàng </Text>
-                                
-                            </View>
+                        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                           <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ lấy hàng </Text> 
                         </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('ChoGiaoHang')} style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/danggiaohang.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Đang giao</Text>
-
-                            </View>
+                        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ giao hàng</Text>
                         </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                        <Image style={{width: 50, height: 50,}} source={require('../assets/danhgia.png')}></Image>
-                            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Đánh giá</Text>
-                               
-                            </View>
-                        </View>  
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={()=>navigation.navigate('DanhGia')}  style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}} >
+                        <Image style={{width: 50, height: 50,}} source={require('../assets/danhgia.png')}>
+                        </Image>
+                        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Đánh giá</Text>
+                        
+                        </View>
+                    </TouchableOpacity>
+                    
                             
-                    </View>
+                </View>
                 <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
                     
                 <View style={{}}>
@@ -381,7 +384,7 @@ function Profile({navigation, user, level, flow, watching }){
 
                     </View>
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
-                    <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-around'}} onPress={()=>{navigation.navigate('DanhGia')}}>
                         <View>
                             <Image style={{width: 35, height: 35}} source={require('../assets/danhgiacuatoi.png')}></Image>
                         </View>
@@ -396,6 +399,9 @@ function Profile({navigation, user, level, flow, watching }){
                         <View style={{alignItems: 'center', justifyContent: 'center' ,}}>
                             <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
                         </View>
+                    </TouchableOpacity>
+                    <View >
+                        
 
                     </View>
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>

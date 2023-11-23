@@ -8,26 +8,32 @@ function Login({navigation }){
     const [password, setPassword] = useState('')
 
     const data =[{
+        id: 1,
         userName: 'duongtuankiet',
         password: '123456'
     },
     {
-        userName: 'tamnhu',
-        password: '112233'
+        id: 2,
+        userName: 'huynhletamnhu',
+        password: '123456'
     },
     {
+        id:3,
         userName: 'vuhuyen',
         password: '000000'
     },
     {
+        id:4,
         userName: 'levu',
         password: '012345'
     },
     {
+        id: 5,
         userName: 'thientam',
         password: '654321'
     },
     {
+        id:6,
         userName: 'hieuthuhai',
         password: '147258369'
     },
@@ -55,7 +61,7 @@ function Login({navigation }){
     return(
         <View style={styles.container}>
             <View style={styles.top}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('ProfileNoUser')}}>
                     <Image source={require('../assets/back.png')} style={{width: 40, height: 40, marginRight: 30}}></Image>
                 </TouchableOpacity>
                

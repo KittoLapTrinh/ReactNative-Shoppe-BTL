@@ -6,7 +6,7 @@ function Logo({navigation}){
 
             <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                 <TouchableOpacity onPress={()=>{
-                    navigation.navigate('Profile')
+                    navigation.navigate('ProfileNoUser')
                 }}>
                     <Image style={{width: 170, height: 170}} source={require('../assets/logo.png')}/>
                 </TouchableOpacity>
