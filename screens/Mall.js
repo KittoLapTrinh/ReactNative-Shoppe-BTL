@@ -621,14 +621,14 @@ function Mall({navigation }){
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
                 </TouchableOpacity>   
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
                     <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>
-                </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                </TouchableOpacity> 
+                <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
                     <Text>Video</Text>
-                </View>
+                </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
                     <Text>Thông báo</Text>

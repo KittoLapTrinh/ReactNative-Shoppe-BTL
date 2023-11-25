@@ -139,7 +139,7 @@ function ProfileNoUser({navigation }){
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                             <Image style={{width: 50, height: 50,}} source={require('../assets/vishoppepay.jpg')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ xác nhận</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Ví ShopeePay</Text>
                                
                             </View>
                         </View>
@@ -147,14 +147,14 @@ function ProfileNoUser({navigation }){
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/shoppexu.jpg')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Chờ lấy hàng </Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Shopee Xu</Text>
                                 
                             </View>
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/voucher.png')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Đang giao</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Kho Voucher</Text>
                             </View>
                         </View>                     
                     </View>
@@ -416,10 +416,10 @@ function ProfileNoUser({navigation }){
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
                 </TouchableOpacity>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
+                    <Image style={{width: 35, height: 35, backgroundColor: '#5c5c5c'}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>
-                </View>
+                </TouchableOpacity> 
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
                     <Text>Video</Text>

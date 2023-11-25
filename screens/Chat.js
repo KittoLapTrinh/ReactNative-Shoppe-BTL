@@ -3,7 +3,13 @@ import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 
 import { CheckBox, FlatList, TextInput } from 'react-native-web';
 import { Linking } from 'react-native';
 
-function Chat({navigation , itemId}){
+function Chat({navigation}){
+  const goBack = () => {
+    navigation.goBack();
+  }
+  const goHome = () => {
+      navigation.navigate('Home');
+  }
   const [text, setText] = useState('');
 
   const onChangeText = (inputText) => {
@@ -21,7 +27,7 @@ function Chat({navigation , itemId}){
         
       <View style={styles.container}>
         <View style={styles.top}>
-             <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+             <TouchableOpacity onPress={goBack}>
                 <Image source={require('../assets/back.png')} style={{width: 40, height: 40, marginRight: 30}}></Image>
             </TouchableOpacity>
             <Text style={{fontSize: 25, fontWeight: 'bold', justifyContent: 'center', alignItems: 'center', marginHorizontal: 30}}>Chat</Text>
@@ -29,7 +35,7 @@ function Chat({navigation , itemId}){
               <Text style={{fontSize: 20}}>Xong</Text>
             </TouchableOpacity >
           </View>
-          <View style={{flex: 0.05, backgroundColor: '#C4C4C4'}}></View>
+        <View style={{flex: 0.05, backgroundColor: '#C4C4C4'}}></View>
         <View style={{ flex: 1 }}>
         <View style={{flex:1, flexDirection: 'row', justifyContent: 'center',}}>
           <TouchableOpacity >

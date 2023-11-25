@@ -22,8 +22,13 @@ const goiY = [
 
 ]
 
-function ChoLayHang({navigation , itemId}){
-
+function ChoLayHang({navigation }){
+    const goBack = () => {
+        navigation.goBack();
+    }
+    const goHome = () => {
+        navigation.navigate('Home');
+    }
     return(
         <View style={styles.container}>
             <View style={{backgroundColor: '#fff7f3',  paddingBottom: 20,}}>
@@ -33,7 +38,7 @@ function ChoLayHang({navigation , itemId}){
                   
                     width: 390,
                     height: 60}}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                    <TouchableOpacity onPress={goBack}>
                         <Image source={require('../assets/back.png')} style={{width: 40, height: 40, marginRight: 30}}></Image>
                     </TouchableOpacity>
                 
@@ -41,7 +46,7 @@ function ChoLayHang({navigation , itemId}){
                     <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
                         <Image source={require('../assets/look.png')} style={{width: 35, height: 35, marginLeft: 20}}></Image>
                     </TouchableOpacity >
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
                             <Image source={require('../assets/mess.png')} style={{width: 36, height: 40, marginLeft: 20}}></Image>
                     </TouchableOpacity>
                 </View>

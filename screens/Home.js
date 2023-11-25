@@ -6,7 +6,12 @@ import React, { useState, useEffect,useRef  } from 'react';
 
 
 function Home({navigation }){
-
+    const goBack = () => {
+        navigation.goBack();
+    }
+    const goHome = () => {
+        navigation.navigate('Home');
+    }
 
 
     const [currentPage, setCurrentPage] = useState(0);
@@ -438,15 +443,15 @@ function Home({navigation }){
                             <Text>Ví ShopeePay</Text>
                         </View>
                     </View>
-                   
-                    <View>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('ShopeeXu')}}>
                         <View style={{flexDirection: 'row'}}>
                             <Image style={{width: 35, height: 35}} source={require('../assets/shoppexu.jpg')}></Image>
                             <Text>100</Text>
                         </View>
                     
                         <Text>Shopee Xu của tôi</Text>
-                    </View>
+                    </TouchableOpacity>
+                    
                 </View>
                 <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10, paddingVertical: 1}}></View>
                 <ScrollView horizontal={true}  >
@@ -587,14 +592,14 @@ function Home({navigation }){
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
                 </TouchableOpacity>   
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
                     <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>
-                </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                </TouchableOpacity> 
+                <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
                     <Text>Video</Text>
-                </View>
+                </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
                     <Text>Thông báo</Text>

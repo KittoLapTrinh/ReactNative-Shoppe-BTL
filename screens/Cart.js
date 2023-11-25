@@ -3,8 +3,13 @@ import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 
 import { CheckBox, FlatList, TextInput } from 'react-native-web';
 import { Linking } from 'react-native';
 
-function Cart({navigation , itemId}){
-  
+function Cart({navigation}){
+    const goBack = () => {
+        navigation.goBack();
+    }
+    const goHome = () => {
+        navigation.navigate('Home');
+    }
     const [quantity, setQuantity] = useState(1)
     const [shopName, setShopName] = useState('')
     
@@ -96,12 +101,12 @@ function Cart({navigation , itemId}){
         
         <View style={styles.container}>
             <View style={styles.top}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                <TouchableOpacity onPress={goBack}>
                     <Image source={require('../assets/back.png')} style={{width: 40, height: 40, marginRight: 30}}></Image>
                 </TouchableOpacity>
                
                 <Text style={{fontSize: 25, fontWeight: 'bold', justifyContent: 'center', alignItems: 'center', marginHorizontal: 30}}>Giỏ hàng</Text>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Home')}}>
                    <Text style={{fontSize: 20}}>Xong</Text>
                 </TouchableOpacity >
                <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>

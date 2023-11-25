@@ -2,10 +2,13 @@ import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 
 import { FlatList } from 'react-native-web';
 
 function Notify({navigation }){
-
-    const DATA =[
+    const goBack = () => {
+        navigation.goBack();
+    }
+    const goHome = () => {
+        navigation.navigate('Home');
+    }
     
-    ]
 
     return(
         <View style={styles.container}>
@@ -22,9 +25,10 @@ function Notify({navigation }){
                         
 
                     </View>
-                    <View>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
                         <Image style={{width: 35, height: 35}} source={require('../assets/messenger.png')}></Image>
-                    </View>
+                    </TouchableOpacity>
+                    
                 </View>
                 <View style={{flex: 0.05, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
                 <View style={{flex: 1}}>
@@ -174,14 +178,14 @@ function Notify({navigation }){
                     <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
                     <Text>Mall</Text>
                 </TouchableOpacity>   
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
                     <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
                     <Text>Live</Text>
-                </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                </TouchableOpacity> 
+                <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
                     <Text>Video</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{alignItems: 'center', justifyContent: 'center',backgroundColor: '#5c5c5c'}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
                     <Text>Thông báo</Text>
