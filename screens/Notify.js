@@ -1,12 +1,28 @@
 import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList } from 'react-native-web';
-
+import {Ionicons} from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'; 
 function Notify({navigation }){
     const goBack = () => {
         navigation.goBack();
     }
     const goHome = () => {
         navigation.navigate('Home');
+    }
+    const goMall = () => {
+        navigation.navigate('Mall');
+    }
+    const goLive = () => {
+        navigation.navigate('Live');
+    }
+    const goVideo = () => {
+        navigation.navigate('Video');
+    }
+    const goNotify = () => {
+        navigation.navigate('Notify');
+    }
+    const goProfile = () => {
+        navigation.navigate('Profile');
     }
     
 
@@ -19,7 +35,7 @@ function Notify({navigation }){
                     </View>
                     <View style={{ marginHorizontal: 20}}>
                         <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
-                            <Image style={{width: 35, height: 35}} source={require('../assets/giohang.png')}></Image>
+                            <Image style={{width: 40, height: 40}} source={require('../assets/giohang.png')}></Image>
                         </TouchableOpacity>
                        
                         
@@ -169,34 +185,33 @@ function Notify({navigation }){
                 
                 
             </ScrollView>
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingBottom: 35, paddingTop: 35, backgroundColor: '#C4C4C4'}}>
-                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/home.png')}></Image>
-                    <Text>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
-                    <Text>Mall</Text>
-                </TouchableOpacity>   
-                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
-                    <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
-                    <Text>Live</Text>
-                </TouchableOpacity> 
-                <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
-                    <Text>Video</Text>
-                </TouchableOpacity>
-                <View style={{alignItems: 'center', justifyContent: 'center',backgroundColor: '#5c5c5c'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
-                    <Text>Thông báo</Text>
-                </View>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
-                    <View style={{alignItems: 'center', justifyContent: 'center', }}>
-                        <Image style={{width: 35, height: 35}} source={require('../assets/toi.png')}></Image>
-                        <Text>Tôi</Text>
-                    </View>
-                </TouchableOpacity>
-                
+            <View style={{height: 30, flexDirection: 'row', alignItems: 'center', paddingBottom: 35, paddingTop: 35, backgroundColor: 'white'}}>
+                  <TouchableOpacity style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
+                  <Ionicons name='home-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Home</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                    <Feather name='shopping-bag' size={30} color='#bfbfbf'></Feather>
+                    <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Mall</Text>
+                  </TouchableOpacity>  
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}} >
+                  <Ionicons name='videocam-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Live</Text>
+                    </TouchableOpacity> 
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                  <Ionicons name='play-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Video</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}}  style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                  <Ionicons name='newspaper' size={30} color='orange'></Ionicons>
+                  <Text style = {{color: 'orange', fontSize: 13}}>Thông báo</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}} style = {{flex: 1,}}>
+                      <View style={{alignItems: 'center', justifyContent: 'center', }}>
+                      <Ionicons name='person-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Tôi</Text>
+                      </View>
+                  </TouchableOpacity>
             </View> 
         </View>
     )

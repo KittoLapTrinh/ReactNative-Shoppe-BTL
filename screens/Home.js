@@ -3,7 +3,8 @@ import { FlatList, TextInput } from 'react-native-web';
 import { PanGestureHandler, State} from 'react-native-gesture-handler';
 import Countdown from 'react-native-countdown-component';
 import React, { useState, useEffect,useRef  } from 'react';
-
+import {Ionicons} from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'; 
 
 function Home({navigation }){
     const goBack = () => {
@@ -11,6 +12,24 @@ function Home({navigation }){
     }
     const goHome = () => {
         navigation.navigate('Home');
+    }
+    const goMall = () => {
+        navigation.navigate('Mall');
+    }
+    const goLive = () => {
+        navigation.navigate('Live');
+    }
+    const goVideo = () => {
+        navigation.navigate('Video');
+    }
+    const goNotify = () => {
+        navigation.navigate('Notify');
+    }
+    const goProfile = () => {
+        navigation.navigate('Profile');
+    }
+    const goShopeePay = () => {
+        navigation.navigate('ShopeePay');
     }
 
 
@@ -177,7 +196,7 @@ function Home({navigation }){
         },
         {
             id: '7',
-            img: require('../assets/khachhangthanthiet1.png'),
+            img: require('../assets/khachhangthanthiet.png'),
             name: 'Khách Hàng Thân Thiết'
         
         },
@@ -378,7 +397,77 @@ function Home({navigation }){
             name: 'Áo vest nam đen 2 lớp đẹp, cao cấp',
             price: '515.000đ', 
             sold: 'Đã bán 101.8k',
-        },   
+        }, 
+        {
+            id: '11',
+            img: require('../assets/giaythethao.png'),
+            name: 'Giày thể thao Adidas khắc tên Messi',
+            price: '999.000đ', 
+            sold: 'Đã bán 259.8k',
+        },
+        {
+            id: '12',
+            img: require('../assets/aoblazernu.png'),
+            name: 'Áo Blazer nữ leopard-pint by Blaz',
+            price: '619.000đ', 
+            sold: 'Đã bán 161.1k',
+        },  
+        {
+            id: '13',
+            img: require('../assets/lythuytinh.png'),
+            name: 'Bộ 6 ly thủy tinh LUMINARC 320ml Xanh Dương',
+            price: '139.000đ', 
+            sold: 'Đã bán 139.6k',
+        },
+        {
+            id: '14',
+            img: require('../assets/quat.png'),
+            name: 'Quạt bàn lỡ Senko ống nhựa L1638',
+            price: '619.000đ', 
+            sold: 'Đã bán 161.1k',
+        },  
+        {
+            id: '15',
+            img: require('../assets/suatam1.png'),
+            name: 'Sữa tắm Happy Bath Natural Body Wash Hang Quốc 900gr',
+            price: '267.000đ',
+            sold: 'Đã bán 69.2k',
+        },
+        {
+            id: '16',
+            img: require('../assets/nuochoa1.png'),
+            name: 'Nước hoa Dior thơm lâu nam tính',
+            price: '458.000đ', 
+            sold: 'Đã bán 251.0k',
+        },  
+        {
+            id: '17',
+            img: require('../assets/daychuyen1.png'),
+            name: 'Dây chuyền nữ xinh đẹp cao cấp tinh xảo HPSEO',
+            price: '425.000đ',
+            sold: 'Đã bán 619.2k',
+        },
+        {
+            id: '18',
+            img: require('../assets/dongu.png'),
+            name: 'Đồ ngủ bộ áo hai dây quần dài DB199',
+            price: '366.000đ', 
+            sold: 'Đã bán 159.0k',
+        },
+        {
+            id: '19',
+            img: require('../assets/daugoi1.png'),
+            name: 'Dầu gội dược liệu Nguyên Xuân Xanh 200ml',
+            price: '360.000đ',
+            sold: 'Đã bán 66.8k',
+        },
+        {
+            id: '20',
+            img: require('../assets/vidanam.png'),
+            name: 'Ví da nam cá sấu dành cho nam cao cấp',
+            price: '125.000đ', 
+            sold: 'Đã bán 97.6k',
+        },  
     ]
 
  
@@ -396,7 +485,7 @@ function Home({navigation }){
                 </View>
                 <View style={{ marginHorizontal: 20}}>
                     <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
-                        <Image style={{width: 35, height: 35}} source={require('../assets/giohang.png')}></Image>
+                        <Image style={{width: 40, height: 40}} source={require('../assets/giohang.png')}></Image>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
@@ -405,11 +494,11 @@ function Home({navigation }){
             </View>
             <View style={{flex: 0.01, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
             
-            <PanGestureHandler onGestureEvent={onGestureEvent} onHandlerStateChange={onHandlerStateChange}>
+            {/* <PanGestureHandler onGestureEvent={onGestureEvent} onHandlerStateChange={onHandlerStateChange}>
                 <View style={{flexDirection: 'row'}}>
-                    
+                  
                 </View>
-            </PanGestureHandler>
+            </PanGestureHandler> */}
             
             
             
@@ -433,7 +522,7 @@ function Home({navigation }){
                         <Image style={{width: 35, height: 35}} source={require('../assets/scan.png')}></Image>
                     </View>
                 
-                    <View style={{}}>
+                    <TouchableOpacity onPress={goShopeePay} style={{}}>
                         <View style={{flexDirection: 'row'}}>
                             <Image style={{width: 20, height: 20}} source={require('../assets/vishoppepay.jpg')}></Image>
                             <Text>Voucher giảm đến 40.000đ</Text>
@@ -442,7 +531,7 @@ function Home({navigation }){
                         <View>
                             <Text>Ví ShopeePay</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                     <TouchableOpacity onPress={()=>{navigation.navigate('ShopeeXu')}}>
                         <View style={{flexDirection: 'row'}}>
                             <Image style={{width: 35, height: 35}} source={require('../assets/shoppexu.jpg')}></Image>
@@ -582,36 +671,33 @@ function Home({navigation }){
             
             
           
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingBottom: 35, paddingTop: 35, backgroundColor: '#C4C4C4'}}>
-                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center',backgroundColor: '#5c5c5c'}} onPress={()=>{navigation.navigate('Home')}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/home.png')}></Image>
-                    <Text>Home</Text>
-                </TouchableOpacity>
-               
-                <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
-                    <Text>Mall</Text>
-                </TouchableOpacity>   
-                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
-                    <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
-                    <Text>Live</Text>
-                </TouchableOpacity> 
-                <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
-                    <Text>Video</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
-                    <Text>Thông báo</Text>
-                </TouchableOpacity>
-              
-                <TouchableOpacity onPress={()=>{navigation.navigate('ProfileNoUser')}}>
-                    <View style={{alignItems: 'center', justifyContent: 'center', }}>
-                        <Image style={{width: 35, height: 35}} source={require('../assets/toi.png')}></Image>
-                        <Text>Tôi</Text>
-                    </View>
-                </TouchableOpacity>
-                
+            <View style={{height: 30, flexDirection: 'row', alignItems: 'center', paddingBottom: 35, paddingTop: 35, backgroundColor: 'white'}}>
+                  <TouchableOpacity style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
+                  <Ionicons name='home' size={30} color='orange'></Ionicons>
+                  <Text style = {{color: 'orange',  fontSize: 13}}>Home</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                    <Feather name='shopping-bag' size={30} color='#bfbfbf'></Feather>
+                    <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Mall</Text>
+                  </TouchableOpacity>  
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}} >
+                  <Ionicons name='videocam-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Live</Text>
+                    </TouchableOpacity> 
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                  <Ionicons name='play-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Video</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}}  style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                  <Ionicons name='newspaper-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Thông báo</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}} style = {{flex: 1,}}>
+                      <View style={{alignItems: 'center', justifyContent: 'center', }}>
+                      <Ionicons name='person-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Tôi</Text>
+                      </View>
+                  </TouchableOpacity>
             </View> 
         </View>
     )

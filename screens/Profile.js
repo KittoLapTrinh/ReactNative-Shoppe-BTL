@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {View,Button,ScrollView, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList } from 'react-native-web';
+import {Ionicons} from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'; 
 const data = {
     user: 'duongtuankiet',
     level: 'Bạc',
@@ -8,14 +10,34 @@ const data = {
     watching: '211'
 }
     
-
-
-
-        
-    
-
-function Profile({navigation, user, level, flow, watching }){
-    
+function Profile({navigation}){
+    const goBack = () => {
+        navigation.goBack();
+    }
+    const goHome = () => {
+        navigation.navigate('Home');
+    }
+    const goMall = () => {
+        navigation.navigate('Mall');
+    }
+    const goLive = () => {
+        navigation.navigate('Live');
+    }
+    const goVideo = () => {
+        navigation.navigate('Video');
+    }
+    const goNotify = () => {
+        navigation.navigate('Notify');
+    }
+    const goProfile = () => {
+        navigation.navigate('Profile');
+    }
+    const goShopeePay = () => {
+        navigation.navigate('ShopeePay');
+    }
+    const goShopeeXu = () => {
+        navigation.navigate('ShopeeXu');
+    }
     return(
         <View style={styles.container}>
             
@@ -23,12 +45,12 @@ function Profile({navigation, user, level, flow, watching }){
            
                 <View style={{ backgroundColor: '#f0743f', flex: 1, flexDirection: 'column', paddingBottom: 15}}>                  
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
-                            <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/setting.png')}></Image>
+                            <Image style={{width: 35, height: 35, marginHorizontal: 10}} source={require('../assets/setting.png')}></Image>
                             <TouchableOpacity onPress={()=>{navigation.navigate('Cart')}}>
-                                <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/giohang.png')}></Image>
+                                <Image style={{width: 35, height: 35, marginHorizontal: 10}} source={require('../assets/giohang.png')}></Image>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={()=>{navigation.navigate('Chat')}}>
-                            <Image style={{width: 25, height: 25, marginHorizontal: 10}} source={require('../assets/messenger.png')}></Image>
+                            <Image style={{width: 35, height: 35, marginHorizontal: 10}} source={require('../assets/messenger.png')}></Image>
                             </TouchableOpacity>
                             
                                         
@@ -204,21 +226,19 @@ function Profile({navigation, user, level, flow, watching }){
                 </View>
                 <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
+                        <TouchableOpacity onPress={goShopeePay} style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                             <Image style={{width: 50, height: 50,}} source={require('../assets/vishoppepay.jpg')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{fontWeight: 'bold', fontSize: 13}}>Ví ShopeePay</Text>
-                               
+                                <Text style={{fontWeight: 'bold', fontSize: 13}}>Ví ShopeePay</Text>  
                             </View>
-                        </View>
-                       
-                        <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
-                        <Image style={{width: 50, height: 50,}} source={require('../assets/shoppexu.jpg')}></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('ShopeeXu')}} style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
+                            <Image style={{width: 50, height: 50,}} source={require('../assets/shoppexu.jpg')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
                                 <Text style={{fontWeight: 'bold', fontSize: 13}}>Shopee Xu</Text>
                                 
                             </View>
-                        </View>
+                        </TouchableOpacity>
                         <View style={{alignItems: 'center', justifyContent: 'center', paddingVertical: 10}}>
                         <Image style={{width: 50, height: 50,}} source={require('../assets/voucher.png')}></Image>
                             <View style={{alignItems: 'center', justifyContent: 'center'}}>
@@ -366,14 +386,12 @@ function Profile({navigation, user, level, flow, watching }){
 
                     </View>
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
-                    <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-around'}} onPress={goShopeeXu}>
                         <View>
                             <Image style={{width: 35, height: 35}} source={require('../assets/shoppexu.jpg')}></Image>
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center' , marginRight: 30, flexDirection: 'row'}}>
                             <Text>Shopee Xu</Text>
-                           
-                            
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center' , marginLeft: 10}}>
                             <Text>Nhấn để nhận xu mỗi ngày</Text>
@@ -381,8 +399,7 @@ function Profile({navigation, user, level, flow, watching }){
                         <View style={{alignItems: 'center', justifyContent: 'center' ,}}>
                             <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
                         </View>
-
-                    </View>
+                    </TouchableOpacity>
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
                     <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-around'}} onPress={()=>{navigation.navigate('DanhGia')}}>
                         <View>
@@ -478,39 +495,33 @@ function Profile({navigation, user, level, flow, watching }){
                     </View>
                     <View style={{flex: 0.02, backgroundColor: '#C4C4C4', marginTop: 10}}></View>
             </ScrollView>
-            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingBottom: 35, paddingTop: 35, backgroundColor: '#C4C4C4'}}>
-                
-                <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/home.png')}></Image>
-                    <Text>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/mall.png')}></Image>
-                    <Text>Mall</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{alignItems: 'center', justifyContent: 'center'}} >
-                    <Image style={{width: 35, height: 35}} source={require('../assets/live.png')}></Image>
-                    <Text>Live</Text>
-                </TouchableOpacity> 
-                <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Image style={{width: 35, height: 35}} source={require('../assets/video.png')}></Image>
-                    <Text>Video</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}}>
-                    <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                        <Image style={{width: 35, height: 35}} source={require('../assets/thongbao.png')}></Image>
-                        <Text>Thông báo</Text>
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}}>
-                    <View style={{alignItems: 'center', justifyContent: 'center', backgroundColor: '#5c5c5c'}}>
-                            <Image style={{width: 35, height: 35}} source={require('../assets/toi.png')}></Image>
-                        <Text>Tôi</Text>
-                    </View>
-                </TouchableOpacity>
-               
-                
+            <View style={{height: 30, flexDirection: 'row', alignItems: 'center', paddingBottom: 35, paddingTop: 35, backgroundColor: 'white'}}>
+                  <TouchableOpacity style={{flex: 1, alignItems: 'center', justifyContent: 'center'}} onPress={()=>{navigation.navigate('Home')}}>
+                  <Ionicons name='home-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Home</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Mall')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                    <Feather name='shopping-bag' size={30} color='#bfbfbf'></Feather>
+                    <Text style = {{color: '#bfbfbf',  fontSize: 13}}>Mall</Text>
+                  </TouchableOpacity>  
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Live')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}} >
+                  <Ionicons name='videocam-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Live</Text>
+                    </TouchableOpacity> 
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Video')}} style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                  <Ionicons name='play-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Video</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Notify')}}  style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+                  <Ionicons name='newspaper-outline' size={30} color='#bfbfbf'></Ionicons>
+                  <Text style = {{color: '#bfbfbf', fontSize: 13}}>Thông báo</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Profile')}} style = {{flex: 1,}}>
+                      <View style={{alignItems: 'center', justifyContent: 'center', }}>
+                      <Ionicons name='person' size={30} color='orange'></Ionicons>
+                  <Text style = {{color: 'orange',  fontSize: 13}}>Tôi</Text>
+                      </View>
+                  </TouchableOpacity>
             </View> 
         </View>
     )
