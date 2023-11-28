@@ -7,6 +7,25 @@ import { Feather } from '@expo/vector-icons';
 
 
 function Mall({navigation }){
+    const [data2, setData] = useState([])
+    const [filteredData, setFilteredData] = useState([]); // Filtered data based on search
+    const [searchText, setSearchText] = useState('')
+    useEffect(() => {
+        fetch('https://6554786b63cafc694fe68232.mockapi.io/user/product')
+          .then((response) => response.json())
+          .then((json) => {
+            setData(json);
+            setFilteredData(json); // Set filtered data initially with all fetched data
+          })
+          .catch((error) => console.error('Error fetching data:', error));
+      }, []);
+      const handleSearch = (text) => {
+        setSearchText(text); // Update the search text state
+        const filtered = data2.filter((item) =>
+          item.name.toLowerCase().includes(text.toLowerCase())
+        );
+        setFilteredData(filtered); // Update the filtered data based on the search text
+      };
     const goBack = () => {
         navigation.goBack();
     }
@@ -304,148 +323,148 @@ function Mall({navigation }){
             name: 'SAMPLING COUNTER'      
         },
     ]
-    const goiY = [
-        {
-            id: '1',
-            img: require('../assets/sach.png'),
-            name: 'Sách - Đắc Nhân Tâm (Khổ Lớn - Tái bản 2024)',
-            price: '99.000đ',
-            sold: 'Đã bán 52,1k',
-        },
-        {
-            id: '2',
-            img: require('../assets/aonam.png'),
-            name: 'Áo sơ mi trắng nam AKUBA tay dài đi học, đi làm form slimfit',
-            price: '125.000đ', 
-            sold: 'Đã bán 50.8k',
-        },
-        {
-            id: '3',
-            img: require('../assets/dothethao.png'),
-            name: 'Quần áo bóng đá đội tuyển achentina mẫu mới nhất',
-            price: '135.000đ', 
-            sold: 'Đã bán 90.7k',
-        },
-        {
-            id: '4',
-            img: require('../assets/denled.png'),
-            name: 'Đèn led dây, đèn led trang trí dây đồng mini',
-            price: '65.000đ', 
-            sold: 'Đã bán 115.3k',
-        },    
-        {
-            id: '5',
-            img: require('../assets/nuochoanu.png'),
-            name: 'Narciso rodriguez - Nước hoa nữ chính hãng nhẹ nhàng ',
-            price: '1.009.000đ', 
-            sold: 'Đã bán 27.9k',
-        }, 
-        {
-            id: '6',
-            img: require('../assets/oplung.png'),
-            name: 'Ốp lưng iphone Rainbow X/XS/11/12/13/14',
-            price: '105.000đ', 
-            sold: 'Đã bán 35.1k',
-        },   
-        {
-            id: '7',
-            img: require('../assets/giaytaynam.png'),
-            name: 'Giày tây nam trẻ trung vân da hàng hiệu Tâm Anh',
-            price: '1.275.000đ', 
-            sold: 'Đã bán 16.5k',
-        },
-        {
-            id: '8',
-            img: require('../assets/suahop.png'),
-            name: 'Sữa Similac IQ HMO Gold Lable số 3 400g',
-            price: '602.000đ', 
-            sold: 'Đã bán 56.4k',
-        }, 
-        {
-            id: '9',
-            img: require('../assets/mubaohiem.png'),
-            name: 'Mũ bảo hiểm 3/4 KYT VENOM OPEN FACE SOLID',
-            price: '345.000đ', 
-            sold: 'Đã bán 76.2k',
-        },  
-        {
-            id: '10',
-            img: require('../assets/aovest.png'),
-            name: 'Áo vest nam đen 2 lớp đẹp, cao cấp',
-            price: '515.000đ', 
-            sold: 'Đã bán 101.8k',
-        },  
-        {
-            id: '11',
-            img: require('../assets/giaythethao.png'),
-            name: 'Giày thể thao Adidas khắc tên Messi',
-            price: '999.000đ', 
-            sold: 'Đã bán 259.8k',
-        },
-        {
-            id: '12',
-            img: require('../assets/aoblazernu.png'),
-            name: 'Áo Blazer nữ leopard-pint by Blaz',
-            price: '619.000đ', 
-            sold: 'Đã bán 161.1k',
-        },  
-        {
-            id: '13',
-            img: require('../assets/lythuytinh.png'),
-            name: 'Bộ 6 ly thủy tinh LUMINARC 320ml Xanh Dương',
-            price: '139.000đ', 
-            sold: 'Đã bán 139.6k',
-        },
-        {
-            id: '14',
-            img: require('../assets/quat.png'),
-            name: 'Quạt bàn lỡ Senko ống nhựa L1638',
-            price: '619.000đ', 
-            sold: 'Đã bán 161.1k',
-        },  
-        {
-            id: '15',
-            img: require('../assets/suatam1.png'),
-            name: 'Sữa tắm Happy Bath Natural Body Wash Hang Quốc 900gr',
-            price: '267.000đ',
-            sold: 'Đã bán 69.2k',
-        },
-        {
-            id: '16',
-            img: require('../assets/nuochoa1.png'),
-            name: 'Nước hoa Dior thơm lâu nam tính',
-            price: '458.000đ', 
-            sold: 'Đã bán 251.0k',
-        },  
-        {
-            id: '17',
-            img: require('../assets/daychuyen1.png'),
-            name: 'Dây chuyền nữ xinh đẹp cao cấp tinh xảo HPSEO',
-            price: '425.000đ',
-            sold: 'Đã bán 619.2k',
-        },
-        {
-            id: '18',
-            img: require('../assets/dongu.png'),
-            name: 'Đồ ngủ bộ áo hai dây quần dài DB199',
-            price: '366.000đ', 
-            sold: 'Đã bán 159.0k',
-        },
-        {
-            id: '19',
-            img: require('../assets/daugoi1.png'),
-            name: 'Dầu gội dược liệu Nguyên Xuân Xanh 200ml',
-            price: '360.000đ',
-            sold: 'Đã bán 66.8k',
-        },
-        {
-            id: '20',
-            img: require('../assets/vidanam.png'),
-            name: 'Ví da nam cá sấu dành cho nam cao cấp',
-            price: '125.000đ', 
-            sold: 'Đã bán 97.6k',
-        },   
-    ]
+    // const goiY = [
+    //     {
+    //         id: '1',
+    //         img: require('../assets/sach.png'),
+    //         name: 'Sách - Đắc Nhân Tâm (Khổ Lớn - Tái bản 2024)',
+    //         price: '99.000đ',
+    //         sold: 'Đã bán 52,1k',
+    //     },
+    //     {
+    //         id: '2',
+    //         img: require('../assets/aonam.png'),
+    //         name: 'Áo sơ mi trắng nam AKUBA tay dài đi học, đi làm form slimfit',
+    //         price: '125.000đ', 
+    //         sold: 'Đã bán 50.8k',
+    //     },
+    //     {
+    //         id: '3',
+    //         img: require('../assets/dothethao.png'),
+    //         name: 'Quần áo bóng đá đội tuyển achentina mẫu mới nhất',
+    //         price: '135.000đ', 
+    //         sold: 'Đã bán 90.7k',
+    //     },
+    //     {
+    //         id: '4',
+    //         img: require('../assets/denled.png'),
+    //         name: 'Đèn led dây, đèn led trang trí dây đồng mini',
+    //         price: '65.000đ', 
+    //         sold: 'Đã bán 115.3k',
+    //     },    
+    //     {
+    //         id: '5',
+    //         img: require('../assets/nuochoanu.png'),
+    //         name: 'Narciso rodriguez - Nước hoa nữ chính hãng nhẹ nhàng ',
+    //         price: '1.009.000đ', 
+    //         sold: 'Đã bán 27.9k',
+    //     }, 
+    //     {
+    //         id: '6',
+    //         img: require('../assets/oplung.png'),
+    //         name: 'Ốp lưng iphone Rainbow X/XS/11/12/13/14',
+    //         price: '105.000đ', 
+    //         sold: 'Đã bán 35.1k',
+    //     },   
+    //     {
+    //         id: '7',
+    //         img: require('../assets/giaytaynam.png'),
+    //         name: 'Giày tây nam trẻ trung vân da hàng hiệu Tâm Anh',
+    //         price: '1.275.000đ', 
+    //         sold: 'Đã bán 16.5k',
+    //     },
+    //     {
+    //         id: '8',
+    //         img: require('../assets/suahop.png'),
+    //         name: 'Sữa Similac IQ HMO Gold Lable số 3 400g',
+    //         price: '602.000đ', 
+    //         sold: 'Đã bán 56.4k',
+    //     }, 
+    //     {
+    //         id: '9',
+    //         img: require('../assets/mubaohiem.png'),
+    //         name: 'Mũ bảo hiểm 3/4 KYT VENOM OPEN FACE SOLID',
+    //         price: '345.000đ', 
+    //         sold: 'Đã bán 76.2k',
+    //     },  
+    //     {
+    //         id: '10',
+    //         img: require('../assets/aovest.png'),
+    //         name: 'Áo vest nam đen 2 lớp đẹp, cao cấp',
+    //         price: '515.000đ', 
+    //         sold: 'Đã bán 101.8k',
+    //     },  
+    //     {
+    //         id: '11',
+    //         img: require('../assets/giaythethao.png'),
+    //         name: 'Giày thể thao Adidas khắc tên Messi',
+    //         price: '999.000đ', 
+    //         sold: 'Đã bán 259.8k',
+    //     },
+    //     {
+    //         id: '12',
+    //         img: require('../assets/aoblazernu.png'),
+    //         name: 'Áo Blazer nữ leopard-pint by Blaz',
+    //         price: '619.000đ', 
+    //         sold: 'Đã bán 161.1k',
+    //     },  
+    //     {
+    //         id: '13',
+    //         img: require('../assets/lythuytinh.png'),
+    //         name: 'Bộ 6 ly thủy tinh LUMINARC 320ml Xanh Dương',
+    //         price: '139.000đ', 
+    //         sold: 'Đã bán 139.6k',
+    //     },
+    //     {
+    //         id: '14',
+    //         img: require('../assets/quat.png'),
+    //         name: 'Quạt bàn lỡ Senko ống nhựa L1638',
+    //         price: '619.000đ', 
+    //         sold: 'Đã bán 161.1k',
+    //     },  
+    //     {
+    //         id: '15',
+    //         img: require('../assets/suatam1.png'),
+    //         name: 'Sữa tắm Happy Bath Natural Body Wash Hang Quốc 900gr',
+    //         price: '267.000đ',
+    //         sold: 'Đã bán 69.2k',
+    //     },
+    //     {
+    //         id: '16',
+    //         img: require('../assets/nuochoa1.png'),
+    //         name: 'Nước hoa Dior thơm lâu nam tính',
+    //         price: '458.000đ', 
+    //         sold: 'Đã bán 251.0k',
+    //     },  
+    //     {
+    //         id: '17',
+    //         img: require('../assets/daychuyen1.png'),
+    //         name: 'Dây chuyền nữ xinh đẹp cao cấp tinh xảo HPSEO',
+    //         price: '425.000đ',
+    //         sold: 'Đã bán 619.2k',
+    //     },
+    //     {
+    //         id: '18',
+    //         img: require('../assets/dongu.png'),
+    //         name: 'Đồ ngủ bộ áo hai dây quần dài DB199',
+    //         price: '366.000đ', 
+    //         sold: 'Đã bán 159.0k',
+    //     },
+    //     {
+    //         id: '19',
+    //         img: require('../assets/daugoi1.png'),
+    //         name: 'Dầu gội dược liệu Nguyên Xuân Xanh 200ml',
+    //         price: '360.000đ',
+    //         sold: 'Đã bán 66.8k',
+    //     },
+    //     {
+    //         id: '20',
+    //         img: require('../assets/vidanam.png'),
+    //         name: 'Ví da nam cá sấu dành cho nam cao cấp',
+    //         price: '125.000đ', 
+    //         sold: 'Đã bán 97.6k',
+    //     },   
+    // ]
 
     return(
         <View style={styles.container}>
@@ -454,7 +473,7 @@ function Mall({navigation }){
                 
                 <View style={{flexDirection: 'row',  borderWidth: 1, borderColor: 'gray',}}>
                     <Image style={{width: 35, height: 35}} source={require('../assets/look.png')}></Image>
-                   <TextInput  placeholder="Shopee Mall" style={{color: 'red', fontWeight: 'bold', fontSize:15}}></TextInput>
+                   <TextInput  placeholder="Shopee Mall" style={{color: 'red', fontWeight: 'bold', fontSize:15}} value={searchText} onChangeText={handleSearch}></TextInput>
                    <Image style={{width: 35, height: 35}} source={require('../assets/camera.png')}></Image>
                 </View>
                 <View style={{ marginHorizontal: 20}}>
@@ -586,7 +605,41 @@ function Mall({navigation }){
                         <Image style={{width: 25, height: 25}} source={require('../assets/next.png')}></Image>
                     </View>   
                 </View>
-                <ScrollView  style={{flexDirection: 'row',}}  >
+                <FlatList
+                        data={filteredData}
+                        numColumns={2}
+                        keyExtractor={(item, index) => index.toString()} // Ensure each item has a unique key
+                        renderItem={({ item }) => (
+                            <View style={{ flex: 1, flexDirection: 'column', margin: 5, width: '50%' }}>
+                            <TouchableOpacity style={{ paddingHorizontal: 20 }}>
+                                <Image
+                                source={{ uri: item.img }}
+                                style={{
+                                    width: '100%',
+                                    aspectRatio: 1, // To maintain aspect ratio
+                                    borderColor: '#C4C4C4',
+                                    borderWidth: 1,
+                                }}
+                                resizeMode="cover"
+                                />
+                            </TouchableOpacity>
+                            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 14, width: '100%', height: 60, fontWeight: 'bold' }}>
+                                {item.name}
+                                </Text>
+                            </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                                <View>
+                                <Text style={{ color: 'red', fontWeight: 'bold', fontSize: 18 }}>{item.price}</Text>
+                                </View>
+                                <View>
+                                <Text style={{ fontSize: 12 }}>{item.sold}</Text>
+                                </View>
+                            </View>
+                            </View>
+                        )}
+                        />
+                {/* <ScrollView  style={{flexDirection: 'row',}}  >
                     <FlatList  data={goiY}  keyExtractor={item => item.id.toString()} numColumns={2} renderItem = {({item})=>{
                         return(
                             <View style={{}}>
@@ -613,7 +666,7 @@ function Mall({navigation }){
                     }}>
 
                     </FlatList>
-                </ScrollView>
+                </ScrollView> */}
                     {/* <ScrollView  style={{flexDirection: 'row',}}  >
                             <FlatList  data={goiY}  keyExtractor={item => item.id.toString()} numColumns={2} renderItem = {({item})=>{
                                 return(
